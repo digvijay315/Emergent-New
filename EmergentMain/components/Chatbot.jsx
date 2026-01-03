@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState } from "react";
 import { X, MessageCircle, Send } from "lucide-react";
 
@@ -270,6 +272,7 @@ export const Chatbot = () => {
       {isOpen && (
         <div
           style={{
+            
             position: "fixed",
             bottom: "24px",
             right: "24px",
@@ -281,13 +284,14 @@ export const Chatbot = () => {
             display: "flex",
             flexDirection: "column",
             zIndex: 9999,
-            overflow: "hidden",
+            overflow: "auto",
           }}
           className="chatbot-window"
         >
           {/* Header */}
           <div
             style={{
+              marginTop:"60px",
               padding: "20px",
               backgroundColor: "#0066cc",
               color: "#FFFFFF",

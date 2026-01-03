@@ -13,6 +13,7 @@ import {
 import FAQSection from "../components/FAQSection";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Chatbot from "@/components/Chatbot";
 
 export const Home = () => {
   const problems = [
@@ -155,7 +156,7 @@ export const Home = () => {
             className="fade-in-delay-2"
             style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}
           >
-            <Link href="/contact" className="btn-primary">
+            <Link href="/contactus" className="btn-primary">
               Request a Consultation
             </Link>
             <Link href="/how-it-helps" className="btn-secondary">
@@ -907,7 +908,9 @@ export const Home = () => {
           </Link>
         </div>
       </section>
+      <Chatbot/>
       <Footer/>
+      
     </div>
   );
 };

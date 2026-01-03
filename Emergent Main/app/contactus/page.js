@@ -2,8 +2,9 @@
 
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
-import Header from '@/components/layout/header';
-import Footer from '@/components/layout/footer';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);

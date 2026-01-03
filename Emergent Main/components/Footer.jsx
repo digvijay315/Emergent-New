@@ -268,7 +268,7 @@ export const Footer = () => {
             >
               Ready to transform your business with AI automation?
             </p>
-            <Link href="/contact" className="btn-secondary">
+            <Link href="/contactus" className="btn-secondary">
               Contact Us
             </Link>
           </div>

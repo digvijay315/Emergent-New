@@ -177,18 +177,7 @@ export const Header = () => {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/contact"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="btn-primary"
-              style={{
-                padding: "12px 32px",
-                fontSize: "14px",
-                textAlign: "center",
-              }}
-            >
-              Contact
-            </Link>
+         <BookAppointment buttonText="Book Appointment" />
           </div>
         </div>
       )}

@@ -368,7 +368,7 @@ export const Home = () => {
                 style={{ color: "#666666", margin: 0, fontSize: "15px" }}
               >
                 We reduce invisible inefficiencies most businesses overlook—not just
-                automate for automation's sake.
+                automate for automation&apos;s sake.
               </p>
             </div>
           </div>

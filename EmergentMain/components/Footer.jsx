@@ -29,7 +29,7 @@ export const Footer = () => {
                 src="image1.png"
                 alt="IntelliviaAI Logo"
                 style={{
-                  height: "32px",
+                  height: "42px",
                   width: "auto",
                 }}
               />

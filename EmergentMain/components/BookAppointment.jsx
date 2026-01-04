@@ -7,6 +7,7 @@ export const BookAppointment = ({ buttonText = "Book Appointment", buttonStyle =
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    country_code: "",
     phone: "",
     date: "",
     time: "",
@@ -175,6 +176,35 @@ export const BookAppointment = ({ buttonText = "Book Appointment", buttonStyle =
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  style={{
+                    width: "100%",
+                    padding: "12px 16px",
+                    fontSize: "16px",
+                    border: "1px solid #e5e5e5",
+                    borderRadius: "4px",
+                    outline: "none",
+                  }}
+                />
+              </div>
+
+               <div style={{ marginBottom: "20px" }}>
+                <label
+                  style={{
+                    display: "block",
+                    fontSize: "14px",
+                    fontWeight: 600,
+                    marginBottom: "8px",
+                    color: "#1a1a1a",
+                  }}
+                >
+                  Country Code
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="+44"
                   style={{
                     width: "100%",
                     padding: "12px 16px",

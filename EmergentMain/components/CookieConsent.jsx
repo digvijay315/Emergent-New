@@ -1,6 +1,8 @@
+
+"use client"
 import React, { useState, useEffect } from "react";
 import { X, Settings } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export const CookieConsent = () => {
   const [showBanner, setShowBanner] = useState(false);
@@ -125,7 +127,7 @@ export const CookieConsent = () => {
               measure advertising effectiveness. By clicking "Accept All," you consent
               to our use of cookies.{" "}
               <Link
-                to="/privacy"
+                href="/privacy"
                 style={{
                   color: "#0066cc",
                   textDecoration: "none",

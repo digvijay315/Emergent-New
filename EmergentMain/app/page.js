@@ -14,6 +14,7 @@ import FAQSection from "../components/FAQSection";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
+import CookieConsent from "@/components/CookieConsent";
 
 export const Home = () => {
   const problems = [
@@ -483,8 +484,8 @@ export const Home = () => {
                 fontStyle: "italic",
               }}
             >
-              "Automation applied to an efficient operation will magnify the
-              efficiency."
+              &quot;Automation applied to an efficient operation will magnify the
+              efficiency.&quot;
             </div>
             <div
               style={{
@@ -648,7 +649,7 @@ export const Home = () => {
               What Clients Say
             </h2>
             <p className="body-text-large" style={{ color: "#666666" }}>
-              Real feedback from businesses we've helped automate
+              Real feedback from businesses we&apos;ve helped automate
             </p>
           </div>
           <div className="grid-3">
@@ -731,7 +732,7 @@ export const Home = () => {
                       marginBottom: "16px",
                     }}
                   >
-                    "{review.feedback}"
+                    &quot;`{review.feedback}&quot;`
                   </p>
                 </div>
                 <div
@@ -891,7 +892,7 @@ export const Home = () => {
               margin: "0 auto 48px",
             }}
           >
-            Let's discuss how AI automation can solve your unique challenges and
+            Let&apos;s discuss how AI automation can solve your unique challenges and
             drive growth.
           </p>
           <Link
@@ -908,6 +909,7 @@ export const Home = () => {
           </Link>
         </div>
       </section>
+      <CookieConsent/>
       <Chatbot/>
       <Footer/>
       

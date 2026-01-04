@@ -10,6 +10,7 @@ export const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    country_code: "",
     phone: "",
     company: "",
     industry: "",
@@ -63,7 +64,7 @@ export const Contact = () => {
       >
         <div className="container" style={{ textAlign: "center" }}>
           <h1 className="hero-headline" style={{ marginBottom: "24px" }}>
-            Let's Start a
+            Let&apos;s Start a
             <br />
             <span className="accent-text">Conversation</span>
           </h1>
@@ -76,7 +77,7 @@ export const Contact = () => {
             }}
           >
             Ready to transform your business with AI automation? Get in touch and
-            let's explore how we can help.
+            let&apos;s explore how we can help.
           </p>
         </div>
       </section>
@@ -305,6 +306,40 @@ export const Contact = () => {
                     onChange={handleChange}
                     required
                     data-testid="contact-email-input"
+                    style={{
+                      width: "100%",
+                      padding: "12px 16px",
+                      fontSize: "16px",
+                      border: "1px solid #e5e5e5",
+                      borderRadius: "4px",
+                      outline: "none",
+                      transition: "border-color 0.2s ease",
+                    }}
+                    onFocus={(e) => (e.target.style.borderColor = "#0066cc")}
+                    onBlur={(e) => (e.target.style.borderColor = "#e5e5e5")}
+                  />
+                </div>
+
+          <div style={{ marginBottom: "24px" }}>
+                  <label
+                    htmlFor="phone"
+                    style={{
+                      display: "block",
+                      fontSize: "14px",
+                      fontWeight: 600,
+                      marginBottom: "8px",
+                      color: "#1a1a1a",
+                    }}
+                  >
+                    Country Code
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+44"
                     style={{
                       width: "100%",
                       padding: "12px 16px",

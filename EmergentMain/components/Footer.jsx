@@ -26,7 +26,7 @@ export const Footer = () => {
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
               <img
-                src="image1.png"
+                src="/image1.png"
                 alt="IntelliviaAI Logo"
                 style={{
                   height: "42px",

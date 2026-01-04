@@ -68,7 +68,7 @@ export const Header = () => {
           onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
         >
           <img
-            src="image0.png"
+            src="/image0.png"
             alt="IntelliviaAI Logo"
             style={{
               height: "48px",

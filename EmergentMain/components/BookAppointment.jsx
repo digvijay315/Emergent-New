@@ -7,6 +7,7 @@ export const BookAppointment = ({ buttonText = "Book Appointment", buttonStyle =
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    industry:"",
     country_code: "",
     phone: "",
     date: "",
@@ -187,7 +188,50 @@ export const BookAppointment = ({ buttonText = "Book Appointment", buttonStyle =
                 />
               </div>
 
-               <div style={{ marginBottom: "20px" }}>
+          <div style={{ marginBottom: "20px" }}>
+                  <label
+                    htmlFor="industry"
+                    style={{
+                      display: "block",
+                      fontSize: "14px",
+                      fontWeight: 600,
+                      marginBottom: "8px",
+                      color: "#1a1a1a",
+                    }}
+                  >
+                    Industry *
+                  </label>
+                  <input
+                    type="text"
+                    id="industry"
+                    name="industry"
+                    value={formData.industry}
+                    onChange={handleChange}
+                    required
+                    placeholder="e.g., Healthcare, Finance, E-commerce"
+                    data-testid="contact-industry-input"
+                    style={{
+                      width: "100%",
+                      padding: "12px 16px",
+                      fontSize: "16px",
+                      border: "1px solid #e5e5e5",
+                      borderRadius: "4px",
+                      outline: "none",
+                      transition: "border-color 0.2s ease",
+                    }}
+                    onFocus={(e) => (e.target.style.borderColor = "#0066cc")}
+                    onBlur={(e) => (e.target.style.borderColor = "#e5e5e5")}
+                  />
+                </div>
+
+<div
+  style={{
+    display: "flex",
+    gap: "16px",
+    marginBottom: "20px",
+  }}
+>
+               <div style={{ flex: "0 0 120px" }}>
                 <label
                   style={{
                     display: "block",
@@ -201,7 +245,7 @@ export const BookAppointment = ({ buttonText = "Book Appointment", buttonStyle =
                 </label>
                 <input
                   type="tel"
-                  name="phone"
+                  name="country_code"
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="+44"
@@ -216,7 +260,7 @@ export const BookAppointment = ({ buttonText = "Book Appointment", buttonStyle =
                 />
               </div>
 
-              <div style={{ marginBottom: "20px" }}>
+              <div style={{ flex: 1 }}>
                 <label
                   style={{
                     display: "block",
@@ -244,6 +288,7 @@ export const BookAppointment = ({ buttonText = "Book Appointment", buttonStyle =
                   }}
                 />
               </div>
+</div>
 
               <div
                 style={{

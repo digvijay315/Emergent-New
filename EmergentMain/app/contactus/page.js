@@ -320,73 +320,82 @@ export const Contact = () => {
                   />
                 </div>
 
-          <div style={{ marginBottom: "24px" }}>
-                  <label
-                    htmlFor="phone"
-                    style={{
-                      display: "block",
-                      fontSize: "14px",
-                      fontWeight: 600,
-                      marginBottom: "8px",
-                      color: "#1a1a1a",
-                    }}
-                  >
-                    Country Code
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="+44"
-                    style={{
-                      width: "100%",
-                      padding: "12px 16px",
-                      fontSize: "16px",
-                      border: "1px solid #e5e5e5",
-                      borderRadius: "4px",
-                      outline: "none",
-                      transition: "border-color 0.2s ease",
-                    }}
-                    onFocus={(e) => (e.target.style.borderColor = "#0066cc")}
-                    onBlur={(e) => (e.target.style.borderColor = "#e5e5e5")}
-                  />
-                </div>
+     <div
+  style={{
+    display: "flex",
+    gap: "16px",
+    marginBottom: "24px",
+  }}
+>
+  {/* Country Code */}
+  <div style={{ flex: "0 0 120px" }}>
+    <label
+      htmlFor="country_code"
+      style={{
+        display: "block",
+        fontSize: "14px",
+        fontWeight: 600,
+        marginBottom: "8px",
+        color: "#1a1a1a",
+      }}
+    >
+      Country Code
+    </label>
+    <input
+      type="tel"
+      id="country_code"
+      name="country_code"
+      value={formData.country_code}
+      onChange={handleChange}
+      placeholder="+44"
+      style={{
+        width: "100%",
+        padding: "12px 16px",
+        fontSize: "16px",
+        border: "1px solid #e5e5e5",
+        borderRadius: "4px",
+        outline: "none",
+      }}
+      onFocus={(e) => (e.target.style.borderColor = "#0066cc")}
+      onBlur={(e) => (e.target.style.borderColor = "#e5e5e5")}
+    />
+  </div>
 
-                <div style={{ marginBottom: "24px" }}>
-                  <label
-                    htmlFor="phone"
-                    style={{
-                      display: "block",
-                      fontSize: "14px",
-                      fontWeight: 600,
-                      marginBottom: "8px",
-                      color: "#1a1a1a",
-                    }}
-                  >
-                    Phone Number (Optional)
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="+44 07858 350634"
-                    style={{
-                      width: "100%",
-                      padding: "12px 16px",
-                      fontSize: "16px",
-                      border: "1px solid #e5e5e5",
-                      borderRadius: "4px",
-                      outline: "none",
-                      transition: "border-color 0.2s ease",
-                    }}
-                    onFocus={(e) => (e.target.style.borderColor = "#0066cc")}
-                    onBlur={(e) => (e.target.style.borderColor = "#e5e5e5")}
-                  />
-                </div>
+  {/* Phone Number */}
+  <div style={{ flex: 1 }}>
+    <label
+      htmlFor="phone"
+      style={{
+        display: "block",
+        fontSize: "14px",
+        fontWeight: 600,
+        marginBottom: "8px",
+        color: "#1a1a1a",
+      }}
+    >
+      Phone Number (Optional)
+    </label>
+    <input
+      type="tel"
+      id="phone"
+      name="phone"
+      value={formData.phone}
+      onChange={handleChange}
+      placeholder="07858 350634"
+      style={{
+        width: "100%",
+        padding: "12px 16px",
+        fontSize: "16px",
+        border: "1px solid #e5e5e5",
+        borderRadius: "4px",
+        outline: "none",
+      }}
+      onFocus={(e) => (e.target.style.borderColor = "#0066cc")}
+      onBlur={(e) => (e.target.style.borderColor = "#e5e5e5")}
+    />
+  </div>
+</div>
+
 
                 <div style={{ marginBottom: "24px" }}>
                   <label

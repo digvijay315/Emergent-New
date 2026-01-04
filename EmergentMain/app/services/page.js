@@ -96,6 +96,26 @@ export const Services = () => {
       link: "/services/manufacturing",
       useCases: "Inventory tracking, quality checks, reporting",
     },
+    {
+      name: "E-commerce",
+      link: "/services/e-commerce",
+      useCases: "Order processing, inventory sync, returns automation",
+    },
+    {
+      name: "Finance & Accounting",
+      link: "/services/finance-accounting",
+      useCases: "Reconciliation, invoice processing, compliance",
+    },
+    {
+      name: "Legal Services",
+      link: "/services/legal-services",
+      useCases: "Document review, client intake, billing automation",
+    },
+    {
+      name: "Marketing & Agencies",
+      link: "/services/marketing-agencies",
+      useCases: "Cross-platform reporting, lead routing, campaign ops",
+    },
   ];
 
   const whyChoose = [

@@ -18,7 +18,7 @@ export const Privacy = () => {
       >
         <div className="container" style={{ textAlign: "center" }}>
           <h1 className="hero-headline" style={{ marginBottom: "24px" }}>
-            Privacy Policy
+            Privacy Policy - IntelliviaAI Limited
           </h1>
           <p
             className="body-text-large"
@@ -28,7 +28,8 @@ export const Privacy = () => {
               color: "#666666",
             }}
           >
-            Last Updated: January 2026
+            Last Updated: January 2026<br></br>
+            Website: www.intelliviaai.com
           </p>
         </div>
       </section>
@@ -49,14 +50,28 @@ export const Privacy = () => {
           >
             {/* Introduction */}
             <div style={{ marginBottom: "48px" }}>
+                         <h2
+                style={{
+                  fontSize: "28px",
+                  fontWeight: 600,
+                  marginBottom: "16px",
+                  color: "#1a1a1a",
+                }}
+              >
+                1. Introduction
+              </h2>
               <p className="body-text" style={{ color: "#666666" }}>
-                IntelliviaAI (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) is committed to protecting your
-                privacy. This Privacy Policy explains how we collect, use, store, and
-                protect your personal information when you use our website and services.
+               
+IntelliviaAI Ltd ("IntelliviaAI", "we", "our", "us") is committed to protecting your privacy
+and complying with applicable data protection laws, including UK GDPR, EU GDPR, Data
+Protection Act 2018, and applicable US privacy laws (CCPA/CPRA).
+This Privacy Policy explains how we collect, use, disclose, and protect personal data
+when you interact with our website, services, and AI automation solutions.
+
               </p>
             </div>
 
-            {/* 1. Information We Collect */}
+            {/*  2. Scope */}
             <div style={{ marginBottom: "48px" }}>
               <h2
                 style={{
@@ -66,7 +81,7 @@ export const Privacy = () => {
                   color: "#1a1a1a",
                 }}
               >
-                1. Information We Collect
+                2. Scope
               </h2>
               
               <div style={{ marginBottom: "24px" }}>
@@ -78,11 +93,8 @@ export const Privacy = () => {
                     color: "#1a1a1a",
                   }}
                 >
-                  Information You Provide
+                  This policy applies to
                 </h3>
-                <p className="body-text" style={{ color: "#666666", marginBottom: "8px" }}>
-                  When you contact us or request services, we may collect:
-                </p>
                 <ul
                   style={{
                     color: "#666666",
@@ -90,43 +102,22 @@ export const Privacy = () => {
                     marginLeft: "24px",
                   }}
                 >
-                  <li>Name and contact information (email, phone number)</li>
-                  <li>Company name and business information</li>
-                  <li>Project requirements and workflow descriptions</li>
-                  <li>Communication preferences</li>
+                  <li> Visitors to our website</li>
+                  <li>Prospective and current clients</li>
+                  <li>Users of our internal AI automation systems</li>
+                  <li>Business contacts and partners</li>
                 </ul>
               </div>
 
               <div>
-                <h3
-                  style={{
-                    fontSize: "20px",
-                    fontWeight: 600,
-                    marginBottom: "12px",
-                    color: "#1a1a1a",
-                  }}
-                >
-                  Automatically Collected Information
-                </h3>
                 <p className="body-text" style={{ color: "#666666", marginBottom: "8px" }}>
-                  When you visit our website, we may automatically collect:
+                  It does NOT apply to third-party websites linked from our site.
                 </p>
-                <ul
-                  style={{
-                    color: "#666666",
-                    lineHeight: 1.7,
-                    marginLeft: "24px",
-                  }}
-                >
-                  <li>IP address and browser type</li>
-                  <li>Device information and operating system</li>
-                  <li>Pages visited and time spent on site</li>
-                  <li>Referring website or source</li>
-                </ul>
+          
               </div>
             </div>
 
-            {/* 2. How We Use Your Information */}
+            {/*Roles Under Data Protection Law */}
             <div style={{ marginBottom: "48px" }}>
               <h2
                 style={{
@@ -136,11 +127,8 @@ export const Privacy = () => {
                   color: "#1a1a1a",
                 }}
               >
-                2. How We Use Your Information
+                3. Roles Under Data Protection Law
               </h2>
-              <p className="body-text" style={{ color: "#666666", marginBottom: "12px" }}>
-                We use collected information to:
-              </p>
               <ul
                 style={{
                   color: "#666666",
@@ -148,17 +136,18 @@ export const Privacy = () => {
                   marginLeft: "24px",
                 }}
               >
-                <li>Respond to your inquiries and provide requested information</li>
+                <li>Clients: Data Controllers for their own systems and API integrations.</li>
                 <li>
-                  Deliver AI automation services and ongoing maintenance
+                  IntelliviaAI: Data Processor for client systems; Data Controller for our own operational
                 </li>
-                <li>Communicate about projects, updates, and service improvements</li>
-                <li>Improve our website and user experience</li>
-                <li>Comply with legal obligations</li>
+              
               </ul>
+                     <p className="body-text" style={{ color: "#666666", marginBottom: "12px" }}>
+                use (website, internal marketing, social media automation).
+              </p>
             </div>
 
-            {/* 3. Data Storage and Security */}
+            {/* 4. Personal Data We Collect*/}
             <div style={{ marginBottom: "48px" }}>
               <h2
                 style={{
@@ -168,189 +157,19 @@ export const Privacy = () => {
                   color: "#1a1a1a",
                 }}
               >
-                3. Data Storage and Security
+                4. Personal Data We Collect
               </h2>
-              <p className="body-text" style={{ color: "#666666", marginBottom: "12px" }}>
-                We implement appropriate technical and organizational measures to
-                protect your personal information, including:
-              </p>
-              <ul
-                style={{
-                  color: "#666666",
-                  lineHeight: 1.7,
-                  marginLeft: "24px",
-                  marginBottom: "16px",
-                }}
-              >
-                <li>Encryption of data in transit (HTTPS/TLS)</li>
-                <li>Secure storage with access controls</li>
-                <li>Regular security assessments</li>
-                <li>Limited access to personal data by authorized personnel only</li>
-              </ul>
-              <p className="body-text" style={{ color: "#666666" }}>
-                While we strive to protect your information, no method of transmission
-                over the internet is 100% secure. We cannot guarantee absolute security.
-              </p>
-            </div>
 
-            {/* 4. Third-Party Services */}
-            <div style={{ marginBottom: "48px" }}>
-              <h2
-                style={{
-                  fontSize: "28px",
-                  fontWeight: 600,
-                  marginBottom: "16px",
-                  color: "#1a1a1a",
-                }}
-              >
-                4. Use of Third-Party Tools
-              </h2>
-              <div style={{ marginBottom: "24px" }}>
                 <h3
-                  style={{
-                    fontSize: "20px",
-                    fontWeight: 600,
-                    marginBottom: "12px",
-                    color: "#1a1a1a",
-                  }}
-                >
-                  Website Hosting and Analytics
-                </h3>
-                <p className="body-text" style={{ color: "#666666" }}>
-                  Our website may use third-party services for hosting, analytics, and
-                  performance monitoring. These services may collect anonymized usage
-                  data to help us improve our website.
-                </p>
-              </div>
-
-              <div style={{ marginBottom: "24px" }}>
-                <h3
-                  style={{
-                    fontSize: "20px",
-                    fontWeight: 600,
-                    marginBottom: "12px",
-                    color: "#1a1a1a",
-                  }}
-                >
-                  Meta Pixel and Advertising
-                </h3>
-                <p className="body-text" style={{ color: "#666666", marginBottom: "12px" }}>
-                  We use Meta Pixel (Facebook Pixel) for advertising measurement and
-                  optimization. This tool helps us:
-                </p>
-                <ul
-                  style={{
-                    color: "#666666",
-                    lineHeight: 1.7,
-                    marginLeft: "24px",
-                    marginBottom: "12px",
-                  }}
-                >
-                  <li>Measure the effectiveness of our advertising campaigns</li>
-                  <li>Understand how users interact with our website after viewing ads</li>
-                  <li>Improve ad targeting and performance</li>
-                  <li>Build custom audiences for relevant advertising</li>
-                </ul>
-                <p className="body-text" style={{ color: "#666666" }}>
-                  Meta Pixel may collect information about your device, browser, and
-                  interactions with our website. For more information about Meta&apos;s data
-                  practices, please visit{" "}
-                  <a
-                    href="https://www.facebook.com/privacy/explanation"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ color: "#0066cc", textDecoration: "none" }}
-                  >
-                    Meta&apos;s Privacy Policy
-                  </a>
-                  .
-                </p>
-              </div>
-
-              <div
                 style={{
-                  padding: "24px",
-                  backgroundColor: "#fff9e6",
-                  borderRadius: "4px",
-                  border: "1px solid #ffd966",
-                }}
-              >
-                <h3
-                  style={{
-                    fontSize: "20px",
-                    fontWeight: 600,
-                    marginBottom: "12px",
-                    color: "#1a1a1a",
-                  }}
-                >
-                  AI Services for Clients
-                </h3>
-                <p className="body-text" style={{ color: "#1a1a1a" }}>
-                  <strong>Important:</strong> When we build AI automation systems for
-                  you, all third-party AI tools (OpenAI, Google, Anthropic, etc.) connect
-                  through <strong>your own accounts</strong>. IntelliviaAI does not have
-                  access to your data processed by these services. You are responsible for
-                  reviewing and complying with those providers privacy policies.
-                </p>
-              </div>
-            </div>
-
-            {/* 5. Client Data Ownership and Confidentiality */}
-            <div style={{ marginBottom: "48px" }}>
-              <h2
-                style={{
-                  fontSize: "28px",
+                  fontSize: "20px",
                   fontWeight: 600,
                   marginBottom: "16px",
                   color: "#1a1a1a",
                 }}
               >
-                5. Client Data Ownership and Confidentiality
-              </h2>
-              <p className="body-text" style={{ color: "#666666", marginBottom: "12px" }}>
-                When providing AI automation services:
-              </p>
-              <ul
-                style={{
-                  color: "#666666",
-                  lineHeight: 1.7,
-                  marginLeft: "24px",
-                }}
-              >
-                <li>
-                  <strong>You own your data.</strong> All business data processed by
-                  systems we build remains your property.
-                </li>
-                <li>
-                  Systems run on <strong>your infrastructure</strong> (your servers,
-                  cloud accounts).
-                </li>
-                <li>
-                  We treat all client business information as{" "}
-                  <strong>confidential</strong> and do not share it with third parties.
-                </li>
-                <li>
-                  We do not use your data for training AI models or any purpose beyond
-                  delivering your services.
-                </li>
-              </ul>
-            </div>
-
-            {/* 6. Cookies and Tracking */}
-            <div style={{ marginBottom: "48px" }}>
-              <h2
-                style={{
-                  fontSize: "28px",
-                  fontWeight: 600,
-                  marginBottom: "16px",
-                  color: "#1a1a1a",
-                }}
-              >
-                6. Cookies and Website Tracking
-              </h2>
-              <p className="body-text" style={{ color: "#666666", marginBottom: "12px" }}>
-                Our website may use cookies and similar technologies to:
-              </p>
+                4.1 Information Provided by Users
+              </h3>
               <ul
                 style={{
                   color: "#666666",
@@ -359,52 +178,22 @@ export const Privacy = () => {
                   marginBottom: "16px",
                 }}
               >
-                <li>Remember your preferences</li>
-                <li>Analyze website traffic and usage patterns</li>
-                <li>Improve website functionality and user experience</li>
+                <li>Name, email, phone</li>
+                <li>Company and role</li>
+                <li>Inquiry submissions, support requests</li>
+                <li>Newsletter sign-ups</li>
               </ul>
-              <p className="body-text" style={{ color: "#666666" }}>
-                You can control cookies through your browser settings. Disabling cookies
-                may affect website functionality.
-              </p>
-            </div>
 
-            {/* 7. Data Retention */}
-            <div style={{ marginBottom: "48px" }}>
-              <h2
+               <h3
                 style={{
-                  fontSize: "28px",
+                  fontSize: "20px",
                   fontWeight: 600,
                   marginBottom: "16px",
                   color: "#1a1a1a",
                 }}
               >
-                7. Data Retention
-              </h2>
-              <p className="body-text" style={{ color: "#666666" }}>
-                We retain personal information only as long as necessary to provide
-                services and comply with legal obligations. Contact form submissions are
-                kept for up to 2 years. Client project information is retained for the
-                duration of the engagement and up to 3 years thereafter for support and
-                legal compliance purposes.
-              </p>
-            </div>
-
-            {/* 8. Your Rights */}
-            <div style={{ marginBottom: "48px" }}>
-              <h2
-                style={{
-                  fontSize: "28px",
-                  fontWeight: 600,
-                  marginBottom: "16px",
-                  color: "#1a1a1a",
-                }}
-              >
-                8. Your Rights (GDPR and UK Data Protection)
-              </h2>
-              <p className="body-text" style={{ color: "#666666", marginBottom: "12px" }}>
-                Under UK and EU data protection laws, you have the right to:
-              </p>
+                4.2 Automatic Collection- IP addresses, browser type, device info
+              </h3>
               <ul
                 style={{
                   color: "#666666",
@@ -413,38 +202,96 @@ export const Privacy = () => {
                   marginBottom: "16px",
                 }}
               >
-                <li>
-                  <strong>Access:</strong> Request a copy of the personal data we hold
-                  about you
-                </li>
-                <li>
-                  <strong>Correction:</strong> Request correction of inaccurate or
-                  incomplete data
-                </li>
-                <li>
-                  <strong>Deletion:</strong> Request deletion of your personal data
-                  (subject to legal obligations)
-                </li>
-                <li>
-                  <strong>Restriction:</strong> Request restriction of processing in
-                  certain circumstances
-                </li>
-                <li>
-                  <strong>Portability:</strong> Receive your data in a structured,
-                  machine-readable format
-                </li>
-                <li>
-                  <strong>Object:</strong> Object to processing based on legitimate
-                  interests
-                </li>
+                <li>Usage logs, analytics</li>
+                <li>Cookies and tracking technologies</li>
               </ul>
-              <p className="body-text" style={{ color: "#666666" }}>
-                To exercise any of these rights, please contact us using the details
-                below.
-              </p>
+
+               <h3
+                style={{
+                  fontSize: "20px",
+                  fontWeight: 600,
+                  marginBottom: "16px",
+                  color: "#1a1a1a",
+                }}
+              >
+                4.3 Client System Data
+              </h3>
+              <ul
+                style={{
+                  color: "#666666",
+                  lineHeight: 1.7,
+                  marginLeft: "24px",
+                  marginBottom: "16px",
+                }}
+              >
+                <li> Processed strictly for service delivery</li>
+                <li>Data remains under client ownership and control</li>
+              </ul>
+     
             </div>
 
-            {/* 9. International Data Transfers */}
+            {/* 5. API Integrations */}
+          <div style={{ marginBottom: "48px" }}>
+              <h2
+                style={{
+                  fontSize: "28px",
+                  fontWeight: 600,
+                  marginBottom: "16px",
+                  color: "#1a1a1a",
+                }}
+              >
+                5. API Integrations
+              </h2>
+
+              <ul
+                style={{
+                  color: "#666666",
+                  lineHeight: 1.7,
+                  marginLeft: "24px",
+                  marginBottom: "16px",
+                }}
+              >
+                <li>Integrations may include LinkedIn, X (Twitter), Google Workspace (Sheets, Drive,
+Calendar, Gmail), CRMs, AI providers (OpenAI, Anthropic), and others.</li>
+                <li>All systems are built using client-owned accounts and API keys.</li>
+                <li>Data flow: Client system -&gt; Third-party API -&gt; Client system.</li>
+                <li>IntelliviaAI does NOT store production data from client systems.</li>
+                <li>Clients are responsible for lawful API use, obtaining consents, and compliance with
+platform terms.</li>
+              </ul>
+
+            </div>
+
+            {/* 5. 6. Client-Owned Infrastructure Model */}
+          <div style={{ marginBottom: "48px" }}>
+              <h2
+                style={{
+                  fontSize: "28px",
+                  fontWeight: 600,
+                  marginBottom: "16px",
+                  color: "#1a1a1a",
+                }}
+              >
+                6. Client-Owned Infrastructure Model
+              </h2>
+
+              <ul
+                style={{
+                  color: "#666666",
+                  lineHeight: 1.7,
+                  marginLeft: "24px",
+                  marginBottom: "16px",
+                }}
+              >
+                <li>Systems run on client servers or cloud accounts.</li>
+                <li>Clients have full access and control at all times.</li>
+                <li>No vendor lock-in or black-box solutions.</li>
+                <li>Upon contract termination, clients retain full system access and data ownership.</li>
+              </ul>
+              
+            </div>
+
+            {/* 7. Cookies and Analytics */}
             <div style={{ marginBottom: "48px" }}>
               <h2
                 style={{
@@ -454,18 +301,27 @@ export const Privacy = () => {
                   color: "#1a1a1a",
                 }}
               >
-                9. International Data Transfers
+                7. Cookies and Analytics
               </h2>
-              <p className="body-text" style={{ color: "#666666" }}>
-                Your information may be transferred to and stored in countries outside
-                the UK/EU. Where this occurs, we ensure appropriate safeguards are in
-                place to protect your data in accordance with applicable data protection
-                laws.
-              </p>
+
+              <ul
+                style={{
+                  color: "#666666",
+                  lineHeight: 1.7,
+                  marginLeft: "24px",
+                  marginBottom: "16px",
+                }}
+              >
+                <li>We use cookies for essential functionality, analytics, and advertising/retargeting.</li>
+                <li>Consent obtained via cookie banner; withdrawal possible at any time.</li>
+                <li>Third-party tools include Google Analytics, Meta Pixel, LinkedIn Insight Tag, X Ads</li>
+                
+              </ul>
+              
             </div>
 
-            {/* 10. Children's Privacy */}
-            <div style={{ marginBottom: "48px" }}>
+            {/* 8. Log Files */}
+          <div style={{ marginBottom: "48px" }}>
               <h2
                 style={{
                   fontSize: "28px",
@@ -474,18 +330,26 @@ export const Privacy = () => {
                   color: "#1a1a1a",
                 }}
               >
-                10. Children&apos;s Privacy
+                8. Log Files
               </h2>
-              <p className="body-text" style={{ color: "#666666" }}>
-                Our services are not directed to individuals under 18 years of age. We do
-                not knowingly collect personal information from children. If you believe
-                we have inadvertently collected information from a child, please contact
-                us immediately.
-              </p>
+
+              <ul
+                style={{
+                  color: "#666666",
+                  lineHeight: 1.7,
+                  marginLeft: "24px",
+                  marginBottom: "16px",
+                }}
+              >
+                <li>IP address, device/browser info, date/time, referring pages.</li>
+                <li>Purpose: security, troubleshooting, fraud detection.</li>
+                
+              </ul>
+              
             </div>
 
-            {/* 11. Changes to Privacy Policy */}
-            <div style={{ marginBottom: "48px" }}>
+            {/* 9. AI & Automated Processing */}
+          <div style={{ marginBottom: "48px" }}>
               <h2
                 style={{
                   fontSize: "28px",
@@ -494,70 +358,276 @@ export const Privacy = () => {
                   color: "#1a1a1a",
                 }}
               >
-                11. Changes to This Privacy Policy
+                9. AI & Automated Processing
               </h2>
-              <p className="body-text" style={{ color: "#666666" }}>
-                We may update this Privacy Policy from time to time to reflect changes in
-                our practices or legal requirements. Material changes will be communicated
-                via email to active clients or through a notice on our website. The &quot;Last
-                Updated&quot; date at the top indicates when changes were last made.
-              </p>
+
+              <ul
+                style={{
+                  color: "#666666",
+                  lineHeight: 1.7,
+                  marginLeft: "24px",
+                  marginBottom: "16px",
+                }}
+              >
+                <li>No fully automated decisions with legal or significant effects without human oversight.- AI processing for client
+systems uses client API keys.</li>
+                <li>IntelliviaAI does not train AI models on client data.</li>
+                <li>Clients are responsible for outputs of automated systems.</li>
+              </ul>
+              
+            </div>
+
+            {/* 10. Security Measures */}
+           <div style={{ marginBottom: "48px" }}>
+              <h2
+                style={{
+                  fontSize: "28px",
+                  fontWeight: 600,
+                  marginBottom: "16px",
+                  color: "#1a1a1a",
+                }}
+              >
+                10. Security Measures
+              </h2>
+
+              <ul
+                style={{
+                  color: "#666666",
+                  lineHeight: 1.7,
+                  marginLeft: "24px",
+                  marginBottom: "16px",
+                }}
+              >
+                <li>Encryption in transit and at rest.</li>
+                <li>Access control and least privilege.</li>
+                <li>Audit logs and monitoring.</li>
+                <li>Secure handling of credentials.</li>
+                <li>Incident response procedures.</li>
+              </ul>
+              
+            </div>
+
+            {/* 11. Marketing Communications & Newsletters */}
+           <div style={{ marginBottom: "48px" }}>
+              <h2
+                style={{
+                  fontSize: "28px",
+                  fontWeight: 600,
+                  marginBottom: "16px",
+                  color: "#1a1a1a",
+                }}
+              >
+                11. Marketing Communications & Newsletters
+              </h2>
+
+              <ul
+                style={{
+                  color: "#666666",
+                  lineHeight: 1.7,
+                  marginLeft: "24px",
+                  marginBottom: "16px",
+                }}
+              >
+                <li>Based on consent or legitimate interest.</li>
+                <li>Users may unsubscribe at any time.</li>
+                <li>Service providers act as processors.</li>
+              </ul>
+              
+            </div>
+
+            {/* 12. Data Retention */}
+             <div style={{ marginBottom: "48px" }}>
+              <h2
+                style={{
+                  fontSize: "28px",
+                  fontWeight: 600,
+                  marginBottom: "16px",
+                  color: "#1a1a1a",
+                }}
+              >
+                12. Data Retention
+              </h2>
+
+              <ul
+                style={{
+                  color: "#666666",
+                  lineHeight: 1.7,
+                  marginLeft: "24px",
+                  marginBottom: "16px",
+                }}
+              >
+                <li>Website inquiries and support: up to 2 years.</li>
+                <li>Client project data: as per contract.</li>
+                <li>Financial/contractual records: 6 years.</li>
+                <li>Logs: limited retention for security/operations.</li>
+              </ul>
+              
+            </div>
+
+             {/* 13. International Data Transfers */}
+             <div style={{ marginBottom: "48px" }}>
+              <h2
+                style={{
+                  fontSize: "28px",
+                  fontWeight: 600,
+                  marginBottom: "16px",
+                  color: "#1a1a1a",
+                }}
+              >
+                13. International Data Transfers
+              </h2>
+
+              <ul
+                style={{
+                  color: "#666666",
+                  lineHeight: 1.7,
+                  marginLeft: "24px",
+                  marginBottom: "16px",
+                }}
+              >
+                <li>SCCs, UK IDTA, adequacy decisions, Transfer Impact Assessments where required.</li>
+              </ul>
+              
+            </div>
+
+              {/* 14. Client Responsibilities */}
+             <div style={{ marginBottom: "48px" }}>
+              <h2
+                style={{
+                  fontSize: "28px",
+                  fontWeight: 600,
+                  marginBottom: "16px",
+                  color: "#1a1a1a",
+                }}
+              >
+                14. Client Responsibilities
+              </h2>
+
+              <ul
+                style={{
+                  color: "#666666",
+                  lineHeight: 1.7,
+                  marginLeft: "24px",
+                  marginBottom: "16px",
+                }}
+              >
+                <li>Maintain their own privacy policies for end-users.</li>
+                <li>Obtain necessary consents.</li>
+                <li>Comply with API platform terms.</li>
+                <li>Respond to data subject requests.</li>
+              </ul>
+              
+            </div>
+
+            {/* 15. Data Subject Rights */}
+             <div style={{ marginBottom: "48px" }}>
+              <h2
+                style={{
+                  fontSize: "28px",
+                  fontWeight: 600,
+                  marginBottom: "16px",
+                  color: "#1a1a1a",
+                }}
+              >
+                15. Data Subject Rights
+              </h2>
+
+              <ul
+                style={{
+                  color: "#666666",
+                  lineHeight: 1.7,
+                  marginLeft: "24px",
+                  marginBottom: "16px",
+                }}
+              >
+                <li>Access, rectification, erasure, restriction, objection, portability, withdraw consent.</li>
+                <li>Requests via hello@intelliviaai.com16. Children&apos;s Data.</li>
+                <li>Services not intended for children under 16; we do not knowingly collect such data.</li>
+              </ul>
+              
+            </div>
+
+                {/* 16. Changes to Privacy Policy */}
+             <div style={{ marginBottom: "48px" }}>
+              <h2
+                style={{
+                  fontSize: "28px",
+                  fontWeight: 600,
+                  marginBottom: "16px",
+                  color: "#1a1a1a",
+                }}
+              >
+                16. Changes to Privacy Policy
+              </h2>
+
+              <ul
+                style={{
+                  color: "#666666",
+                  lineHeight: 1.7,
+                  marginLeft: "24px",
+                  marginBottom: "16px",
+                }}
+              >
+                <li>Updates will be posted with revised date.</li>
+                <li>Users encouraged to review periodically.</li>
+                
+              </ul>
+              
             </div>
 
             {/* Contact Information */}
-            <div
-              style={{
-                padding: "32px",
-                backgroundColor: "#fafafa",
-                borderRadius: "4px",
-                border: "1px solid #e5e5e5",
-              }}
-            >
-              <h2
-                style={{
-                  fontSize: "24px",
-                  fontWeight: 600,
-                  marginBottom: "16px",
-                  color: "#1a1a1a",
-                }}
-              >
-                Contact Us
-              </h2>
-              <p className="body-text" style={{ color: "#666666", marginBottom: "12px" }}>
-                If you have questions about this Privacy Policy or wish to exercise your
-                data protection rights, please contact us:
-              </p>
-              <p className="body-text" style={{ color: "#666666", marginBottom: "8px" }}>
-                <strong>IntelliviaAI</strong>
-              </p>
-              <p className="body-text" style={{ color: "#666666", marginBottom: "4px" }}>
-                Website:{" "}
-                <a
-                  href="https://www.intelliviaai.com"
-                  style={{ color: "#0066cc", textDecoration: "none" }}
-                >
-                  www.intelliviaai.com
-                </a>
-              </p>
-              <p className="body-text" style={{ color: "#666666", marginBottom: "4px" }}>
-                Email:{" "}
-                <a
-                  href="mailto:info@intelliviaai.com"
-                  style={{ color: "#0066cc", textDecoration: "none" }}
-                >
-                  info@intelliviaai.com
-                </a>
-              </p>
-              <p className="body-text" style={{ color: "#666666", margin: 0 }}>
-                Phone:{" "}
-                <a
-                  href="tel:+447858350634"
-                  style={{ color: "#0066cc", textDecoration: "none" }}
-                >
-                  +44 07858 350634
-                </a>
-              </p>
-            </div>
+          <div
+  style={{
+    padding: "32px",
+    backgroundColor: "#fafafa",
+    borderRadius: "4px",
+    border: "1px solid #e5e5e5",
+  }}
+>
+  <h2
+    style={{
+      fontSize: "24px",
+      fontWeight: 600,
+      marginBottom: "16px",
+      color: "#1a1a1a",
+    }}
+  >
+    17. Contact Information
+  </h2>
+
+  <p style={{ color: "#666666", margin: 0 }}>
+    IntelliviaAI Ltd
+  </p>
+
+  <p style={{ color: "#666666", margin: 0 }}>
+    Email:{" "}
+    <a
+      href="mailto:info@intelliviaai.com"
+      style={{ color: "#0066cc", textDecoration: "none" }}
+    >
+      info@intelliviaai.com
+    </a>
+  </p>
+
+  <p style={{ color: "#666666", margin: 0 }}>
+    Phone:{" "}
+    <a
+      href="tel:+447858350634"
+      style={{ color: "#0066cc", textDecoration: "none" }}
+    >
+      +44 07858 350634
+    </a>
+  </p>
+
+  <p style={{ color: "#666666", margin: 0 }}>
+    Jurisdiction: England & Wales
+  </p>
+</div>
+  <p style={{ color: "#666666", margin: 4 }}>
+    This Privacy Policy ensures full compliance with GDPR, CCPA/CPRA, and professional
+enterprise standards. It reflects IntelliviaAI’s client-owned infrastructure model, AI
+automation practices, API integrations, and operational data practices.
+  </p>
           </div>
         </div>
       </section>

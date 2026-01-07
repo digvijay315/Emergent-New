@@ -5,20 +5,21 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { toast } from "sonner";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import api from "../../components/api"
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     country_code: "",
-    phone: "",
+    mobile_number: "",
     company: "",
     industry: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const API_URL = process.env.REACT_APP_BACKEND_URL;
+
 
   const handleChange = (e) => {
     setFormData({
@@ -27,29 +28,41 @@ export const Contact = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const response = await fetch(`${API_URL}/api/contact`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        toast.success("Thank you for reaching out. We will get back to you within 24 hours.");
-        setFormData({ name: "", email: "", phone: "", company: "", industry: "", message: "" });
-      } else {
-        toast.error("Failed to send message. Please try again.");
-      }
-    } catch (error) {
-      toast.error("Failed to send message. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+ const handleSubmit = async (e) => {
+   e.preventDefault();
+   setIsSubmitting(true);
+ 
+   try {
+     const response = await toast.promise(
+       api.post("api/contactus/Save-enquiry", formData),
+       {
+         loading: "Booking appointment...",
+         success: (res) =>
+           res.data.message || "Enquiry send successfully!",
+         error: (err) =>
+           err.response?.data?.message ||
+           err.response?.data?.errors?.[0] ||
+           "Something went wrong. Please try again.",
+       }
+     );
+ 
+     setFormData({
+      name: "",
+      email: "",
+      country_code: "",
+      mobile_number: "",
+      company: "",
+      industry: "",
+      message: "",
+     });
+ 
+   } catch (err) {
+     // Sonner already handled toast
+     console.error("Booking error:", err);
+   } finally {
+     setIsSubmitting(false);
+   }
+ };
 
   return (
     <div>
@@ -378,8 +391,8 @@ export const Contact = () => {
     <input
       type="tel"
       id="phone"
-      name="phone"
-      value={formData.phone}
+      name="mobile_number"
+      value={formData.mobile_number}
       onChange={handleChange}
       placeholder="07858 350634"
       style={{

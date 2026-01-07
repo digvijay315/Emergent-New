@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Calendar, X, Clock } from "lucide-react";
 import { toast } from "sonner";
+import api from "../components/api"
 
 export const BookAppointment = ({ buttonText = "Book Appointment", buttonStyle = "primary" }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +10,7 @@ export const BookAppointment = ({ buttonText = "Book Appointment", buttonStyle =
     email: "",
     industry:"",
     country_code: "",
-    phone: "",
+    mobile_number: "",
     date: "",
     time: "",
     notes: "",
@@ -30,18 +31,50 @@ export const BookAppointment = ({ buttonText = "Book Appointment", buttonStyle =
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
 
-    // Mock submission - in production, this would sync with Outlook Calendar
-    setTimeout(() => {
-      toast.success("Appointment request sent! We'll send you a confirmation email shortly.");
-      setFormData({ name: "", email: "", phone: "", date: "", time: "", notes: "" });
-      setIsOpen(false);
-      setIsSubmitting(false);
-    }, 1000);
-  };
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  try {
+    const response = await toast.promise(
+      api.post("api/appointment/SaveBooking", formData),
+      {
+        loading: "Booking appointment...",
+        success: (res) =>
+          res.data.message || "Appointment booked successfully!",
+        error: (err) =>
+          err.response?.data?.message ||
+          err.response?.data?.errors?.[0] ||
+          "Something went wrong. Please try again.",
+      }
+    );
+
+
+    setIsOpen(false);
+
+    setFormData({
+      name: "",
+      email: "",
+      industry: "",
+      country_code: "",
+      phone: "",
+      date: "",
+      time: "",
+      notes: "",
+    });
+
+  } catch (err) {
+    // Sonner already handled toast
+    console.error("Booking error:", err);
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
+
+
 
   const buttonClass = buttonStyle === "primary" ? "btn-primary" : "btn-secondary";
 
@@ -246,7 +279,7 @@ export const BookAppointment = ({ buttonText = "Book Appointment", buttonStyle =
                 <input
                   type="tel"
                   name="country_code"
-                  value={formData.phone}
+                  value={formData.country_code}
                   onChange={handleChange}
                   placeholder="+44"
                   style={{
@@ -274,8 +307,8 @@ export const BookAppointment = ({ buttonText = "Book Appointment", buttonStyle =
                 </label>
                 <input
                   type="tel"
-                  name="phone"
-                  value={formData.phone}
+                  name="mobile_number"
+                  value={formData.mobile_number}
                   onChange={handleChange}
                   placeholder="+44 07858 350634"
                   style={{

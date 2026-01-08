@@ -29,7 +29,7 @@ app.use(cors())
 connect();
 app.get('/',(req,res)=>
 {
-    res.send("welcome to made4ever")
+    res.send("welcome to IntelliviaAI")
 })
 
 

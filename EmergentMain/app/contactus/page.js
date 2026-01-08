@@ -18,6 +18,13 @@ export const Contact = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+const countryCodes = [
+  { code: "+91", country: "India" },
+  { code: "+1", country: "USA" },
+  { code: "+44", country: "UK" },
+  { code: "+61", country: "Australia" },
+  { code: "+971", country: "UAE" },
+];
 
 
 
@@ -341,38 +348,42 @@ export const Contact = () => {
   }}
 >
   {/* Country Code */}
-  <div style={{ flex: "0 0 120px" }}>
-    <label
-      htmlFor="country_code"
-      style={{
-        display: "block",
-        fontSize: "14px",
-        fontWeight: 600,
-        marginBottom: "8px",
-        color: "#1a1a1a",
-      }}
-    >
-      Country Code
-    </label>
-    <input
-      type="tel"
-      id="country_code"
-      name="country_code"
-      value={formData.country_code}
-      onChange={handleChange}
-      placeholder="+44"
-      style={{
-        width: "100%",
-        padding: "12px 16px",
-        fontSize: "16px",
-        border: "1px solid #e5e5e5",
-        borderRadius: "4px",
-        outline: "none",
-      }}
-      onFocus={(e) => (e.target.style.borderColor = "#0066cc")}
-      onBlur={(e) => (e.target.style.borderColor = "#e5e5e5")}
-    />
-  </div>
+ <div style={{ flex: "0 0 140px" }}>
+  <label
+    style={{
+      display: "block",
+      fontSize: "14px",
+      fontWeight: 600,
+      marginBottom: "8px",
+      color: "#1a1a1a",
+    }}
+  >
+    Country Code
+  </label>
+
+  <select
+    name="country_code"
+    value={formData.country_code}
+    onChange={handleChange}
+    style={{
+      width: "100%",
+      padding: "12px 16px",
+      fontSize: "16px",
+      border: "1px solid #e5e5e5",
+      borderRadius: "4px",
+      outline: "none",
+      backgroundColor: "#fff",
+    }}
+  >
+    <option value="">Select</option>
+    {countryCodes.map((item) => (
+      <option key={item.code} value={item.code}>
+        {item.country} ({item.code})
+      </option>
+    ))}
+  </select>
+</div>
+
 
   {/* Phone Number */}
   <div style={{ flex: 1 }}>
@@ -394,7 +405,7 @@ export const Contact = () => {
       name="mobile_number"
       value={formData.mobile_number}
       onChange={handleChange}
-      placeholder="07858 350634"
+      placeholder="7858 350634"
       style={{
         width: "100%",
         padding: "12px 16px",

@@ -417,13 +417,13 @@ const [loading_import, setloading_import] = useState(false);
             <div className="text-2xl font-bold text-blue-600">
               {total}
             </div>
-            <p className="text-sm text-gray-600">Total Booking</p>
+            <p className="text-sm text-gray-600">Total Enquiry</p>
           </div>
           <div className="bg-white rounded-lg shadow p-4">
             <div className="text-2xl font-bold text-green-600">
               {active_profile || 0}
             </div>
-            <p className="text-sm text-gray-600">Today's Appointments</p>
+            <p className="text-sm text-gray-600">Today's Enquiry</p>
           </div>
           <div className="bg-white rounded-lg shadow p-4">
             <div className="text-2xl font-bold text-purple-600">
@@ -433,7 +433,7 @@ const [loading_import, setloading_import] = useState(false);
                   ).length
                 : 0}
             </div>
-            <p className="text-sm text-gray-600">Upcoming Appointments</p>
+            <p className="text-sm text-gray-600">This Week Enquiry</p>
           </div>
           <div className="bg-white rounded-lg shadow p-4">
             <div className="text-2xl font-bold text-purple-600">

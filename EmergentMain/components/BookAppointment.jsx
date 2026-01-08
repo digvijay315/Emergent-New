@@ -23,6 +23,14 @@ export const BookAppointment = ({ buttonText = "Book Appointment", buttonStyle =
     "02:00 PM", "02:30 PM", "03:00 PM", "03:30 PM",
     "04:00 PM", "04:30 PM", "05:00 PM",
   ];
+  const countryCodes = [
+  { code: "+91", country: "India" },
+  { code: "+1", country: "USA" },
+  { code: "+44", country: "UK" },
+  { code: "+61", country: "Australia" },
+  { code: "+971", country: "UAE" },
+];
+
 
   const handleChange = (e) => {
     setFormData({
@@ -257,41 +265,49 @@ const handleSubmit = async (e) => {
                   />
                 </div>
 
-<div
-  style={{
-    display: "flex",
-    gap: "16px",
-    marginBottom: "20px",
-  }}
->
-               <div style={{ flex: "0 0 120px" }}>
-                <label
-                  style={{
-                    display: "block",
-                    fontSize: "14px",
-                    fontWeight: 600,
-                    marginBottom: "8px",
-                    color: "#1a1a1a",
-                  }}
-                >
-                  Country Code
-                </label>
-                <input
-                  type="tel"
-                  name="country_code"
-                  value={formData.country_code}
-                  onChange={handleChange}
-                  placeholder="+44"
-                  style={{
-                    width: "100%",
-                    padding: "12px 16px",
-                    fontSize: "16px",
-                    border: "1px solid #e5e5e5",
-                    borderRadius: "4px",
-                    outline: "none",
-                  }}
-                />
-              </div>
+          <div
+            style={{
+              display: "flex",
+              gap: "16px",
+              marginBottom: "20px",
+            }}
+          >
+        <div style={{ flex: "0 0 140px" }}>
+  <label
+    style={{
+      display: "block",
+      fontSize: "14px",
+      fontWeight: 600,
+      marginBottom: "8px",
+      color: "#1a1a1a",
+    }}
+  >
+    Country Code
+  </label>
+
+  <select
+    name="country_code"
+    value={formData.country_code}
+    onChange={handleChange}
+    style={{
+      width: "100%",
+      padding: "12px 16px",
+      fontSize: "16px",
+      border: "1px solid #e5e5e5",
+      borderRadius: "4px",
+      outline: "none",
+      backgroundColor: "#fff",
+    }}
+  >
+    <option value="">Select</option>
+    {countryCodes.map((item) => (
+      <option key={item.code} value={item.code}>
+        {item.country} ({item.code})
+      </option>
+    ))}
+  </select>
+</div>
+
 
               <div style={{ flex: 1 }}>
                 <label
@@ -310,7 +326,7 @@ const handleSubmit = async (e) => {
                   name="mobile_number"
                   value={formData.mobile_number}
                   onChange={handleChange}
-                  placeholder="+44 07858 350634"
+                  placeholder="7858350634"
                   style={{
                     width: "100%",
                     padding: "12px 16px",

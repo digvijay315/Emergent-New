@@ -61,13 +61,21 @@ const Dashboard = () => {
   const user = JSON.parse(localStorage.getItem('user'));
 
     const[total_booking,settotal_booking]=useState([])
+    const[recentbooking,setrecentbooking]=useState([])
     const get_all_booking_details=async()=>
     {
       try {
   
         const resp=await api.get(`api/appointment/GetBookingAppointmentDetails`);
-   
         settotal_booking(resp.data.total)
+          const allBookings = resp.data.bookingDetails || [];
+
+        // Sort latest first (newest → oldest)
+        const latestFiveBookings = allBookings
+          // .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+          .slice(0, 5);
+
+        setrecentbooking(latestFiveBookings);
         
       } catch (error) {
         console.log(error);
@@ -82,6 +90,7 @@ const Dashboard = () => {
       },[])
 
          const[total_enquiry,settotal_enquiry]=useState([])
+         const[recentEnquiry,setrecentEnquiry]=useState([])
 
         const get_all_enquiry_details = async () => {
         try {
@@ -89,6 +98,13 @@ const Dashboard = () => {
             `api/contactus/Get-enquiry`
           );
 
+          const allenquiry = resp.data.enquiry || [];
+
+        // Sort latest first (newest → oldest)
+        const latestFiveEnquirys = allenquiry
+          // .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+          .slice(0, 5);
+          setrecentEnquiry(latestFiveEnquirys)
           settotal_enquiry(resp.data.total);
 
         } catch (error) {
@@ -103,55 +119,7 @@ const Dashboard = () => {
   }, []);
   
 
-  const recentMatches = [
-    {
-      id: "1",
-      profileName: "Priya S.",
-      matchName: "Amit P.",
-      score: 85,
-      status: "contacted",
-      date: "2024-01-25",
-    },
-    {
-      id: "2",
-      profileName: "Rahul K.",
-      matchName: "Anita M.",
-      score: 92,
-      status: "pending",
-      date: "2024-01-24",
-    },
-    {
-      id: "3",
-      profileName: "Neha R.",
-      matchName: "Vikash S.",
-      score: 78,
-      status: "accepted",
-      date: "2024-01-24",
-    },
-  ];
-
-  const recentActivities = [
-    {
-      id: "1",
-      message: "New profile added: Priya Sharma",
-      time: "2 hours ago",
-    },
-    {
-      id: "2",
-      message: "New match found for Amit Patel",
-      time: "4 hours ago",
-    },
-    {
-      id: "3",
-      message: "Profile viewed: Rahul Kumar (15 views today)",
-      time: "6 hours ago",
-    },
-    {
-      id: "4",
-      message: "Credits purchased: 50 credits added",
-      time: "1 day ago",
-    },
-  ];
+ 
 
   return (
     <div>
@@ -227,13 +195,13 @@ const Dashboard = () => {
                 Latest appointment found for your company
               </p>
             </div>
-            <button className="text-sm border rounded-md px-3 py-1 flex items-center hover:bg-gray-100">
+            <button onClick={()=>navigate('/booking-appointment-details')} className="text-sm border rounded-md px-3 py-1 flex items-center hover:bg-gray-100">
               View All <ArrowRight className="ml-2 h-4 w-4" />
             </button>
           </div>
 
           <div className="space-y-4">
-            {recentMatches.map((match) => (
+            {recentbooking.map((match) => (
               <div
                 key={match.id}
                 className="flex items-center justify-between p-4 border rounded-lg hover:shadow-sm transition"
@@ -244,33 +212,20 @@ const Dashboard = () => {
                   </div>
                   <div>
                     <p className="font-medium text-gray-800">
-                      {match.profileName}
+                      {match.name}
                     </p>
                     <p className="text-sm text-gray-600">
-                      matched with {match.matchName}
+                      Industry: {match.industry}
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-3">
                   <div className="text-center">
-                    <div className="text-sm font-medium">{match.score}%</div>
-                    <div className="text-xs text-gray-600">match</div>
+                    <div className="text-sm font-medium">{match.date}</div>
+                    <div className="text-xs text-gray-600">{match.time}</div>
                   </div>
-                  <span
-                    className={`px-2 py-1 text-xs rounded-full ${
-                      match.status === "accepted"
-                        ? "bg-green-100 text-green-700"
-                        : match.status === "contacted"
-                        ? "bg-gray-100 text-gray-700"
-                        : "bg-yellow-100 text-yellow-700"
-                    }`}
-                  >
-                    {match.status}
-                  </span>
-                  <button className="p-2 border rounded-md hover:bg-gray-100">
-                    <MessageCircle className="h-4 w-4" />
-                  </button>
+
                 </div>
               </div>
             ))}
@@ -283,28 +238,31 @@ const Dashboard = () => {
           <div className="bg-white p-6 rounded-xl shadow-sm">
             <h3 className="font-semibold mb-3">Recent Enquiry</h3>
             <div className="space-y-3">
-              {recentActivities.map((activity) => (
+              {recentEnquiry.map((activity) => (
                 <div key={activity.id} className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
                   <div>
+                       <h3 className="text-sm font-medium text-gray-800">
+                      {activity.name}
+                    </h3>
                     <p className="text-sm font-medium text-gray-800">
                       {activity.message}
                     </p>
-                    <p className="text-xs text-gray-500">{activity.time}</p>
+                    <p className="text-xs text-gray-500">{new Date(activity.createdAt).toLocaleString()}</p>
                   </div>
                 </div>
               ))}
             </div>
-            <button className="w-full mt-4 text-sm text-blue-600 hover:underline">
+            <button onClick={()=>navigate('/enquiry-details')} className="w-full mt-4 text-sm text-blue-600 hover:underline">
               View All Enquiry
             </button>
           </div>
 
           {/* Recent Activity */}
-          <div className="bg-white p-6 rounded-xl shadow-sm">
+          {/* <div className="bg-white p-6 rounded-xl shadow-sm">
             <h3 className="font-semibold mb-3">Recent Activity</h3>
             <div className="space-y-3">
-              {recentActivities.map((activity) => (
+              {recentEnquiry.map((activity) => (
                 <div key={activity.id} className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
                   <div>
@@ -319,7 +277,7 @@ const Dashboard = () => {
             <button className="w-full mt-4 text-sm text-blue-600 hover:underline">
               View All Activity
             </button>
-          </div>
+          </div> */}
 
           {/* Quick Tip */}
           <div className="bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-xl shadow-sm">

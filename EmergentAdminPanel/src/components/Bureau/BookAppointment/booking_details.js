@@ -390,10 +390,6 @@ const [loading_import, setloading_import] = useState(false);
         </div>
 
       <div className="flex flex-col sm:flex-row sm:justify-between items-center w-full mt-4 mb-2 sm:mt-0 gap-2">
-
-
-      
-
   <button
     onClick={() => exportUserProfiles()}
     className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md flex items-center justify-center w-full sm:w-auto"

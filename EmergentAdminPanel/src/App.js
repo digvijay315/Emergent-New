@@ -9,6 +9,7 @@ import ProtectedRoute from "./components/other component/protected_route";
 
 import BookAppointment from "./components/Bureau/BookAppointment/booking_details";
 import Enquiry from "./components/Bureau/ContactUs/enquiry";
+import Blog from "./components/Bureau/Blog/blog";
 
 
 
@@ -26,9 +27,9 @@ function App() {
         > */}
          <Route path="/dashboard" element={<Dashboard/>}></Route>
 
-         <Route path="/booking-appointment-details" element={<BookAppointment/>}></Route>
-         <Route path="/enquiry-details" element={<Enquiry/>}></Route>
-
+        <Route path="/booking-appointment-details" element={<BookAppointment/>}></Route>
+        <Route path="/enquiry-details" element={<Enquiry/>}></Route>
+        <Route path="/blog" element={<Blog/>}></Route>
     
         {/* </Route> */}
       </Routes>

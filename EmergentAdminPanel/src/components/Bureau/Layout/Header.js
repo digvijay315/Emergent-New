@@ -21,6 +21,7 @@ const navigate=useNavigate()
     { name: "Booking Appointment", href: "/booking-appointment-details" },
     { name: "Enquiry", href: "/enquiry-details" },
     { name: "Feedback", href: "/billing" },
+    { name: "Blog", href: "/blog" },
   ];
 
 

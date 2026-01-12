@@ -1,16 +1,14 @@
 const mongoose = require("mongoose");
 
-const add_blog = new mongoose.Schema(
+const blogSchema = new mongoose.Schema(
   {
-    title: {type: String},
-    content: { type: String},
-    image: { type: String},
-
+    title: { type: String, required: true },
+    description: { type: String },
+    image: { type: String }, // URL (Cloudinary / S3)
+    fullBlog: { type: String },
+    isActive: { type: Boolean, default: true },
   },
-  {
-    timestamps: true,
-  }
+  { timestamps: true }
 );
 
-
-module.exports = mongoose.model("blog", add_blog);
+module.exports = mongoose.model("Blog", blogSchema);

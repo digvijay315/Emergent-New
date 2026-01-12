@@ -19,7 +19,7 @@ export const Terms = () => {
       >
         <div className="container" style={{ textAlign: "center" }}>
           <h1 className="hero-headline" style={{ marginBottom: "24px" }}>
-            Terms & Conditions
+            TERMS & CONDITIONS – INTELLIVIAAI LTD
           </h1>
           <p
             className="body-text-large"
@@ -48,373 +48,389 @@ export const Terms = () => {
             }}
             className="terms-content"
           >
-            {/* Introduction */}
-            <div style={{ marginBottom: "48px" }}>
-              <p className="body-text" style={{ color: "#666666" }}>
-                These Terms and Conditions (&quot;Terms&quot;) govern the provision of AI
-                automation services by IntelliviaAI (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) to clients
-                (&quot;you"&quot;, &quot;your&quot;). By engaging our services, you agree to these Terms.
-              </p>
-            </div>
+ 
 
-            {/* 1. Scope of Services */}
-            <div style={{ marginBottom: "48px" }}>
-              <h2
-                style={{
-                  fontSize: "28px",
-                  fontWeight: 600,
-                  marginBottom: "16px",
-                  color: "#1a1a1a",
-                }}
-              >
-                1. Scope of Services
-              </h2>
-              <p className="body-text" style={{ color: "#666666", marginBottom: "12px" }}>
-                IntelliviaAI provides custom AI automation services, including:
-              </p>
-              <ul
-                style={{
-                  color: "#666666",
-                  lineHeight: 1.7,
-                  marginLeft: "24px",
-                  marginBottom: "12px",
-                }}
-              >
-                <li>Strategy and workflow analysis</li>
-                <li>Custom automation system design and development</li>
-                <li>System integration and deployment</li>
-                <li>Ongoing maintenance and optimization</li>
-              </ul>
-              <p className="body-text" style={{ color: "#666666" }}>
-                All systems are built specifically for your business requirements and
-                deployed on your infrastructure.
-              </p>
-            </div>
+        <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    1. Definitions & Interpretation
+  </h2>
 
-            {/* 2. Client Responsibilities */}
-            <div style={{ marginBottom: "48px" }}>
-              <h2
-                style={{
-                  fontSize: "28px",
-                  fontWeight: 600,
-                  marginBottom: "16px",
-                  color: "#1a1a1a",
-                }}
-              >
-                2. Client Responsibilities
-              </h2>
-              <p className="body-text" style={{ color: "#666666", marginBottom: "12px" }}>
-                You agree to:
-              </p>
-              <ul
-                style={{
-                  color: "#666666",
-                  lineHeight: 1.7,
-                  marginLeft: "24px",
-                }}
-              >
-                <li>
-                  Provide timely access to necessary systems, data, and personnel
-                </li>
-                <li>
-                  Review and approve proposed solutions and implementations
-                </li>
-                <li>
-                  Maintain your own accounts with third-party AI service providers
-                  (OpenAI, Google, Anthropic, etc.)
-                </li>
-                <li>Provide clear feedback and communicate changes in requirements</li>
-                <li>
-                  Ensure adequate infrastructure (servers, cloud accounts) for system
-                  deployment
-                </li>
-              </ul>
-            </div>
+  <p className="body-text" style={{ color: "#666666" }}>
+    “Company”, “we”, “us”, or “our” refers to IntelliviaAI Ltd. “Client”,
+    “you”, or “your” refers to any individual or entity using our website
+    or Services. “Services” include AI automation, consulting,
+    development, deployment, maintenance, and advisory services.
+    “Deliverables” include systems, workflows, code, documentation, and
+    related materials. “Third-Party Services” refers to external platforms,
+    APIs, or infrastructure not owned by IntelliviaAI.
+  </p>
+</div>
 
-            {/* 3. Payment Terms */}
-            <div style={{ marginBottom: "48px" }}>
-              <h2
-                style={{
-                  fontSize: "28px",
-                  fontWeight: 600,
-                  marginBottom: "16px",
-                  color: "#1a1a1a",
-                }}
-              >
-                3. Payment Terms
-              </h2>
-              <div style={{ marginBottom: "16px" }}>
-                <h3
-                  style={{
-                    fontSize: "20px",
-                    fontWeight: 600,
-                    marginBottom: "8px",
-                    color: "#1a1a1a",
-                  }}
-                >
-                  One-Time Setup Cost
-                </h3>
-                <p className="body-text" style={{ color: "#666666" }}>
-                  Payment for initial system development is due according to the
-                  payment schedule outlined in your custom quote. Typical structure:
-                  50% upfront, 50% upon completion.
-                </p>
-              </div>
-              <div>
-                <h3
-                  style={{
-                    fontSize: "20px",
-                    fontWeight: 600,
-                    marginBottom: "8px",
-                    color: "#1a1a1a",
-                  }}
-                >
-                  Weekly Maintenance
-                </h3>
-                <p className="body-text" style={{ color: "#666666" }}>
-                  Ongoing maintenance fees are billed weekly in advance. Payment is due
-                  within 7 days of invoice date.
-                </p>
-              </div>
-            </div>
 
-            {/* 4. Third-Party Services Disclaimer */}
-            <div style={{ marginBottom: "48px" }}>
-              <h2
-                style={{
-                  fontSize: "28px",
-                  fontWeight: 600,
-                  marginBottom: "16px",
-                  color: "#1a1a1a",
-                }}
-              >
-                4. Third-Party Services Disclaimer
-              </h2>
-              <div
-                style={{
-                  padding: "24px",
-                  backgroundColor: "#fff9e6",
-                  borderRadius: "4px",
-                  border: "1px solid #ffd966",
-                  marginBottom: "16px",
-                }}
-              >
-                <p className="body-text" style={{ color: "#1a1a1a", fontWeight: 600 }}>
-                  Important: Third-Party AI Tool Usage
-                </p>
-              </div>
-              <p className="body-text" style={{ color: "#666666", marginBottom: "12px" }}>
-                All AI tools, APIs, and third-party services (including but not limited
-                to OpenAI, Google, Anthropic, Claude, ChatGPT, Gemini) are connected
-                through your own accounts.
-              </p>
-              <p className="body-text" style={{ color: "#666666" }}>
-                <strong>
-                  IntelliviaAI does not resell, mark up, or bill for third-party usage
-                  costs.
-                </strong>{" "}
-                All usage fees from these services are billed directly to you by the
-                respective providers at their standard rates. You are solely
-                responsible for managing and paying these accounts.
-              </p>
-            </div>
+    <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    2. Introduction & Acceptance of Terms
+  </h2>
 
-            {/* 5. Intellectual Property */}
-            <div style={{ marginBottom: "48px" }}>
-              <h2
-                style={{
-                  fontSize: "28px",
-                  fontWeight: 600,
-                  marginBottom: "16px",
-                  color: "#1a1a1a",
-                }}
-              >
-                5. Intellectual Property
-              </h2>
-              <p className="body-text" style={{ color: "#666666", marginBottom: "12px" }}>
-                Upon full payment of the setup cost, you own all custom code,
-                configurations, and systems we build specifically for your business.
-              </p>
-              <p className="body-text" style={{ color: "#666666" }}>
-                IntelliviaAI retains ownership of proprietary methodologies, frameworks,
-                and pre-existing tools used in delivering our services.
-              </p>
-            </div>
+  <p className="body-text" style={{ color: "#666666" }}>
+    By accessing our website, accepting a proposal, invoice, or Statement
+    of Work (SOW), you confirm that you have read, understood, and agree
+    to be legally bound by these Terms. If you do not agree, you must not
+    use our website or Services.
+  </p>
+</div>
 
-            {/* 6. Limitation of Liability */}
-            <div style={{ marginBottom: "48px" }}>
-              <h2
-                style={{
-                  fontSize: "28px",
-                  fontWeight: 600,
-                  marginBottom: "16px",
-                  color: "#1a1a1a",
-                }}
-              >
-                6. Limitation of Liability
-              </h2>
-              <p className="body-text" style={{ color: "#666666", marginBottom: "12px" }}>
-                IntelliviaAI provides services with reasonable skill and care. However,
-                we are not liable for:
-              </p>
-              <ul
-                style={{
-                  color: "#666666",
-                  lineHeight: 1.7,
-                  marginLeft: "24px",
-                  marginBottom: "12px",
-                }}
-              >
-                <li>
-                  Issues caused by third-party services, APIs, or tools outside our
-                  control
-                </li>
-                <li>
-                  Data loss or system failures due to inadequate client infrastructure
-                </li>
-                <li>
-                  Business losses resulting from delays in client approvals or feedback
-                </li>
-                <li>Indirect, consequential, or incidental damages</li>
-              </ul>
-              <p className="body-text" style={{ color: "#666666" }}>
-                Our total liability under these Terms is limited to the amount paid by
-                you for services in the preceding 3 months.
-              </p>
-            </div>
 
-            {/* 7. Termination and Suspension */}
-            <div style={{ marginBottom: "48px" }}>
-              <h2
-                style={{
-                  fontSize: "28px",
-                  fontWeight: 600,
-                  marginBottom: "16px",
-                  color: "#1a1a1a",
-                }}
-              >
-                7. Termination and Suspension
-              </h2>
-              <p className="body-text" style={{ color: "#666666", marginBottom: "12px" }}>
-                <strong>By Client:</strong> You may terminate ongoing maintenance at
-                any time with 7 day&apos;s written notice. No refunds for unused portions of
-                prepaid maintenance.
-              </p>
-              <p className="body-text" style={{ color: "#666666", marginBottom: "12px" }}>
-                <strong>By IntelliviaAI:</strong> We may suspend or terminate services
-                if payment is more than 14 days overdue or if you materially breach
-                these Terms.
-              </p>
-              <p className="body-text" style={{ color: "#666666" }}>
-                Upon termination, you retain full ownership and access to all systems
-                built for you.
-              </p>
-            </div>
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    3. Licence to Use Website
+  </h2>
 
-            {/* 8. Confidentiality */}
-            <div style={{ marginBottom: "48px" }}>
-              <h2
-                style={{
-                  fontSize: "28px",
-                  fontWeight: 600,
-                  marginBottom: "16px",
-                  color: "#1a1a1a",
-                }}
-              >
-                8. Confidentiality
-              </h2>
-              <p className="body-text" style={{ color: "#666666" }}>
-                Both parties agree to keep confidential any proprietary or sensitive
-                information disclosed during the engagement. This obligation continues
-                for 2 years after termination of services.
-              </p>
-            </div>
+  <p className="body-text" style={{ color: "#666666" }}>
+    We grant a limited, non-exclusive, non-transferable licence to access
+    and use the website for lawful business purposes only. This licence
+    does not permit resale, reproduction, scraping, data extraction, or
+    commercial exploitation of website content.
+  </p>
+</div>
 
-            {/* 9. Governing Law */}
-            <div style={{ marginBottom: "48px" }}>
-              <h2
-                style={{
-                  fontSize: "28px",
-                  fontWeight: 600,
-                  marginBottom: "16px",
-                  color: "#1a1a1a",
-                }}
-              >
-                9. Governing Law
-              </h2>
-              <p className="body-text" style={{ color: "#666666" }}>
-                These Terms are governed by the laws of the United Kingdom. Any disputes
-                shall be resolved in the courts of the United Kingdom.
-              </p>
-            </div>
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    4. Acceptable Use
+  </h2>
 
-            {/* 10. Changes to Terms */}
-            <div style={{ marginBottom: "48px" }}>
-              <h2
-                style={{
-                  fontSize: "28px",
-                  fontWeight: 600,
-                  marginBottom: "16px",
-                  color: "#1a1a1a",
-                }}
-              >
-                10. Changes to Terms
-              </h2>
-              <p className="body-text" style={{ color: "#666666" }}>
-                We may update these Terms from time to time. Material changes will be
-                communicated to active clients via email. Continued use of our services
-                after changes constitutes acceptance of the updated Terms.
-              </p>
-            </div>
+  <p className="body-text" style={{ color: "#666666" }}>
+You must use the website and Services lawfully and responsibly. You must not interfere with security,
+attempt unauthorised access, introduce malicious code, misuse automation systems, or use the Services in
+violation of applicable laws or third-party terms.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    5. Restricted Access
+  </h2>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+Certain areas of the website or systems may be restricted. Access credentials must be kept confidential. We
+reserve the right to restrict or revoke access if misuse, security risks, or breaches are identified.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    6. Scope of Services
+  </h2>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+IntelliviaAI provides bespoke AI automation and systems integration services. All scope, timelines,
+deliverables, and pricing are defined in a written proposal, SOW, or invoice. Services are advisory and
+technical and do not constitute legal, financial, or regulatory advice.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    7. Engagement Model
+  </h2>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+Unless otherwise agreed, all automation systems are built on client■owned infrastructure and accounts.
+IntelliviaAI acts as an independent contractor and does not form a partnership, agency, or employment
+relationship.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    8. Client Responsibilities
+  </h2>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+Clients must provide accurate information, maintain security of credentials, ensure lawful data processing,
+obtain necessary consents, and comply with applicable laws and platform terms.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    9. Pricing & Fees
+  </h2>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+Fees are agreed in advance and documented in proposals or invoices. Pricing is based on scope,
+complexity, integrations, and resources. All fees are exclusive of taxes unless stated otherwise.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    10. Payments & Invoicing
+  </h2>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+Invoices are payable within the stated payment period, typically seven (7) days. Late or failed payments may
+result in suspension or termination of Services.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    11. Third-Party Disclaimer
+  </h2>
+   <h3 style={{ fontSize: "24px", fontWeight: 600, marginBottom: "16px",display:"inline-block",backgroundColor:"yellow" }}>
+    Important: Third-Party AI Tool Usage
+  </h3><br></br>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+All AI tools, APIs, and third-party services (including but not limited to OpenAI, Google, Anthropic, Claude, ChatGPT,
+Gemini) are connected through your own accounts.
+  </p>
+    <p className="body-text" style={{ color: "#666666" }}>
+IntelliviaAI does not resell, mark up, or bill for third-party usage costs. All usage fees from these services are billed directly to
+you by the respective providers at their standard rates. You are solely responsible for managing and paying these accounts.
+  </p>
+    <p className="body-text" style={{ color: "#666666" }}>
+Clients are solely responsible for third-party fees, including APIs, hosting, SaaS subscriptions, and licences.
+IntelliviaAI is not liable for third-party service availability or pricing changes.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    12. Intellectual Property - Client
+  </h2>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+Upon full payment, Clients own all custom automation systems and Deliverables created specifically for
+them. This does not include IntelliviaAI’s pre-existing materials or methodologies.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    13. Intellectual Property - IntelliviaAI
+  </h2>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+IntelliviaAI retains ownership of its tools, frameworks, templates, methodologies, and general expertise. No
+rights are transferred except as expressly stated.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    14. User Content
+  </h2>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+Clients retain ownership of all content and data provided. Clients warrant that such content is lawful and
+does not infringe third-party rights.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    15. Confidentiality
+  </h2>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+Both parties must keep confidential information confidential and not disclose it without consent.
+Confidentiality obligations survive termination for at least two (2) years.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    16. Data Protection & Privacy
+  </h2>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+Use of Services is subject to our Privacy Policy and Cookie Policy. For client systems, Clients act as Data
+Controllers and IntelliviaAI acts as Data Processor. A Data Processing Agreement applies where required.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    17. AI & Automated Systems Disclaimer
+  </h2>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+AI systems may require ongoing monitoring and adjustment. IntelliviaAI does not guarantee accuracy,
+completeness, or business outcomes from AI automation.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    18. No Warranties
+  </h2>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+Services are provided with reasonable skill and care but otherwise on an “as is” basis. We make no
+warranties regarding uninterrupted availability or specific results.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    19. Limitation of Liability
+  </h2>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+To the maximum extent permitted by law, IntelliviaAI is not liable for indirect or consequential losses. Total
+liability is capped at the fees paid in the three (3) months preceding the claim.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    20. Reasonableness
+  </h2>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+All exclusions and limitations are intended to be reasonable and proportionate to the nature of the Services.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    21. Indemnity
+  </h2>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+Clients agree to indemnify and hold harmless IntelliviaAI against claims arising from misuse of Services,
+breach of laws, or infringement of third-party rights.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    22. Breaches of These Terms
+  </h2>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+We may suspend or terminate Services for material breach, misuse, or non-payment without liability.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    23. Termination
+  </h2>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+Either party may terminate in accordance with written notice requirements. Termination does not affect
+accrued rights or obligations.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    24. Force Majeure
+  </h2>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+Neither party is liable for delays or failures caused by events beyond reasonable control.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    25. Links to Third-Party Websites
+  </h2>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+Our website may contain links to third-party websites. We are not responsible for their content or practices.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    26. Variation
+  </h2>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+We may revise these Terms from time to time. Continued use constitutes acceptance of revised Terms.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    27. Assignment
+  </h2>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+Clients may not assign rights or obligations without written consent. We may assign these Terms as part of
+business restructuring or sale.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    28. Severability
+  </h2>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+If any provision is held unenforceable, the remaining provisions remain valid and enforceable.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    29. Entire Agreement
+  </h2>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+These Terms, together with proposals, SOWs, and policies, constitute the entire agreement between the
+parties.
+  </p>
+</div>
+
+   <div style={{ marginBottom: "48px" }}>
+  <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
+    30. Law, Jurisdiction & Disputes
+  </h2>
+
+  <p className="body-text" style={{ color: "#666666" }}>
+These Terms are governed by the laws of England & Wales. Courts of England & Wales have exclusive
+jurisdiction. Parties will attempt good-faith resolution before litigation.
+  </p>
+</div>
+
 
             {/* Contact Information */}
-            <div
-              style={{
-                padding: "32px",
-                backgroundColor: "#fafafa",
-                borderRadius: "4px",
-                border: "1px solid #e5e5e5",
-              }}
-            >
+       <div style={{ marginBottom: "48px" }}>
               <h2
                 style={{
                   fontSize: "24px",
                   fontWeight: 600,
                   marginBottom: "16px",
                   color: "#1a1a1a",
+                  backgroundColor:"yellow",
+                  display:"inline-block"
                 }}
               >
-                Contact Information
-              </h2>
-              <p className="body-text" style={{ color: "#666666", marginBottom: "8px" }}>
-                <strong>IntelliviaAI</strong>
-              </p>
-              <p className="body-text" style={{ color: "#666666", marginBottom: "4px" }}>
-                Website:{" "}
-                <a
-                  href="https://www.intelliviaai.com"
-                  style={{ color: "#0066cc", textDecoration: "none" }}
-                >
+                31.Contact Information
+              </h2><br></br>
+              <p className="body-text" style={{ color: "#666666",margin: 1,display:"inline-block",backgroundColor:"yellow" }}>
+                IntelliviaAI Ltd
+              </p><br></br>
+              <p className="body-text" style={{ color: "#666666",margin: 1,display:"inline-block",backgroundColor:"yellow" }}>
                   www.intelliviaai.com
-                </a>
-              </p>
-              <p className="body-text" style={{ color: "#666666", marginBottom: "4px" }}>
-                Email:{" "}
-                <a
-                  href="mailto:info@intelliviaai.com"
-                  style={{ color: "#0066cc", textDecoration: "none" }}
-                >
+                
+              </p><br></br>
+              <p className="body-text" style={{ color: "#666666", margin: 1,display:"inline-block",backgroundColor:"yellow" }}>
+              
                   info@intelliviaai.com
-                </a>
-              </p>
-              <p className="body-text" style={{ color: "#666666", margin: 0 }}>
-                Phone:{" "}
-                <a
-                  href="tel:+447858350634"
-                  style={{ color: "#0066cc", textDecoration: "none" }}
-                >
+                
+              </p><br></br>
+              <p className="body-text" style={{ color: "#666666", margin: 1,display:"inline-block",backgroundColor:"yellow" }}>
+         
+             
                   +44 07858 350634
-                </a>
+              
               </p>
             </div>
           </div>

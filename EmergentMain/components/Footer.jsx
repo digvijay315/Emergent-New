@@ -244,6 +244,19 @@ export const Footer = () => {
               >
                 About
               </Link>
+              <Link
+                href="/support"
+                style={{
+                  fontSize: "14px",
+                  color: "#a0a0a0",
+                  textDecoration: "none",
+                  transition: "color 0.2s ease",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#FFFFFF")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#a0a0a0")}
+              >
+                Support Policy
+              </Link>
             </div>
           </div>
 

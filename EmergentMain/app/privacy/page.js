@@ -18,7 +18,7 @@ export const Privacy = () => {
       >
         <div className="container" style={{ textAlign: "center" }}>
           <h1 className="hero-headline" style={{ marginBottom: "24px" }}>
-            Privacy Policy - IntelliviaAI Limited
+            Privacy Policy
           </h1>
           <p
             className="body-text-large"
@@ -62,7 +62,7 @@ export const Privacy = () => {
               </h2>
               <p className="body-text" style={{ color: "#666666" }}>
                
-IntelliviaAI Ltd ("IntelliviaAI", "we", "our", "us") is committed to protecting your privacy
+IntelliviaAI Ltd (&quot;IntelliviaAI&quot;, &quot;we&quot;, &quot;our&quot;, &quot;us&quot;) is committed to protecting your privacy
 and complying with applicable data protection laws, including UK GDPR, EU GDPR, Data
 Protection Act 2018, and applicable US privacy laws (CCPA/CPRA).
 This Privacy Policy explains how we collect, use, disclose, and protect personal data
@@ -582,44 +582,49 @@ systems uses client API keys.</li>
     backgroundColor: "#fafafa",
     borderRadius: "4px",
     border: "1px solid #e5e5e5",
+    color:"#1a1a1a",
+  
   }}
 >
+
   <h2
     style={{
       fontSize: "24px",
       fontWeight: 600,
       marginBottom: "16px",
-      color: "#1a1a1a",
+      display: "inline-block",padding: "2px 6px", margin: 0,backgroundColor:"yellow"
+      
     }}
   >
     17. Contact Information
-  </h2>
+  </h2><br></br>
 
-  <p style={{ color: "#666666", margin: 0 }}>
+  <p style={{ display: "inline-block",padding: "2px 6px", margin: 0,backgroundColor:"yellow" }}>
     IntelliviaAI Ltd
-  </p>
+  </p><br></br>
 
-  <p style={{ color: "#666666", margin: 0 }}>
+  <p style={{ display: "inline-block",padding: "2px 6px", margin: 0,backgroundColor:"yellow" }}>
     Email:{" "}
     <a
       href="mailto:info@intelliviaai.com"
-      style={{ color: "#0066cc", textDecoration: "none" }}
+      style={{ textDecoration: "none" }}
     >
-      info@intelliviaai.com
+      <span style={{color:"#1a1a1a"}}>info@intelliviaai.com</span>
     </a>
-  </p>
+  </p><br></br>
 
-  <p style={{ color: "#666666", margin: 0 }}>
+  <p style={{ display: "inline-block",padding: "2px 6px", margin: 0,backgroundColor:"yellow" }}>
     Phone:{" "}
     <a
-      href="tel:+447858350634"
-      style={{ color: "#0066cc", textDecoration: "none" }}
+      href="tel:+44 7734862101"
+      style={{  textDecoration: "none" }}
     >
-      +44 07858 350634
+      <span style={{color:"#1a1a1a"}}>+44 7734862101</span>
+      
     </a>
-  </p>
+  </p><br></br>
 
-  <p style={{ color: "#666666", margin: 0 }}>
+  <p style={{ display: "inline-block",padding: "2px 6px", margin: 0,backgroundColor:"yellow" }}>
     Jurisdiction: England & Wales
   </p>
 </div>

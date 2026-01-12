@@ -166,7 +166,7 @@ const Dashboard = () => {
 
       {/* Quick Actions */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-        <button onClick={()=>navigate('/add-new-profile')} className="w-full h-24 flex flex-col justify-center items-center bg-blue-50 text-blue-600 rounded-xl border border-blue-200 hover:bg-blue-100 transition">
+        <button onClick={()=>navigate('/blog')} className="w-full h-24 flex flex-col justify-center items-center bg-blue-50 text-blue-600 rounded-xl border border-blue-200 hover:bg-blue-100 transition">
           <Plus className="h-6 w-6 mb-2" />
           Add New Blog
         </button>
@@ -279,20 +279,7 @@ const Dashboard = () => {
             </button>
           </div> */}
 
-          {/* Quick Tip */}
-          <div className="bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-xl shadow-sm">
-            <div className="flex items-center mb-2">
-              <Star className="h-5 w-5 text-yellow-500 mr-2" />
-              <h3 className="font-semibold">Quick Tip</h3>
-            </div>
-            <p className="text-sm text-gray-700">
-              Profiles with complete information and photos get 3x more matches.
-              Make sure all your profiles are fully updated!
-            </p>
-            <button className="w-full mt-3 border border-yellow-400 text-yellow-700 py-2 rounded-md text-sm hover:bg-yellow-100">
-              Learn More
-            </button>
-          </div>
+      
         </div>
       </div>
     </div>

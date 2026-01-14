@@ -43,6 +43,7 @@ app.use('/api/appointment',require('./routes/book_appointment'));
 
 app.use('/api/blog',require('./routes/blog'));
 
+app.use('/api/ga',require('./routes/ga'));
 
 
 

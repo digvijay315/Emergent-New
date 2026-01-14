@@ -22,6 +22,7 @@ const navigate=useNavigate()
     { name: "Enquiry", href: "/enquiry-details" },
     { name: "Feedback", href: "/billing" },
     { name: "Blog", href: "/blog" },
+    { name: "Report", href: "/report" },
   ];
 
 

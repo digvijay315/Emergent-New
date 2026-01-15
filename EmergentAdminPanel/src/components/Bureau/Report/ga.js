@@ -207,10 +207,21 @@ export default function GaReport() {
       {/* DEVICES */}
       <div className="bg-white p-4 rounded shadow">
         <h1 className="text-2xl font-bold text-gray-900">Devices</h1>
-        <PieChart width={300} height={300}>
-          <Pie data={devices} dataKey="value" nameKey="name" label />
-          <Tooltip />
-        </PieChart>
+    <div className="flex justify-center items-center">
+  <PieChart width={300} height={300}>
+    <Pie
+      data={devices}
+      dataKey="value"
+      nameKey="name"
+      cx="50%"
+      cy="50%"
+      outerRadius={100}
+      label
+    />
+    <Tooltip />
+  </PieChart>
+</div>
+
       </div>
 
 

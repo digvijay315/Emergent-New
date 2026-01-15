@@ -11,7 +11,7 @@ const path = require("path");
 const fs = require("fs");
 
 // Absolute path to your JSON
-const keyPath = path.join(__dirname, "ga-service-account.json");
+const keyPath = path.join(__dirname, "..", "ga-service-account.json"); 
 
 // Read JSON
 const keyFile = JSON.parse(fs.readFileSync(keyPath, "utf8"));

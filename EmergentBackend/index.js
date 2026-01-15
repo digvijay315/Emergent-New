@@ -18,14 +18,17 @@ app.use(express.json({ limit: '50mb' }));
 
 // app.use('/images', express.static('images'));
 app.use('/images', express.static(path.join(__dirname, 'images')));
-app.use(cors())
-// app.use(cors({ origin: 'https://ln-bird-project-px3u.vercel.app/' }));
-// app.use(cors({
-//     origin: ['https://ln-bird-project-px3u.vercel.app', 'https://www.bharatproperties.co','http://localhost:3000'], // Allow both domains
-//     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
-//     allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
-//     credentials: true
-// }));
+// app.use(cors())
+app.use(
+  cors({
+    origin: [
+      "https://admin.intelliviaai.com", // admin panel
+      "https://intelliviaai.com"        // main website (optional)
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+  })
+);
 connect();
 app.get('/',(req,res)=>
 {

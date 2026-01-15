@@ -378,7 +378,7 @@ console.log(response);
             <div style={{ textAlign: "center", padding: "48px 0" }}>
               <p style={{ color: "#888888" }}>Loading reviews...</p>
             </div>
-          ) : approvedReviews.length === 0 ? (
+          ) : approvedReviews?.length === 0 ? (
             <div style={{ textAlign: "center", padding: "48px 0" }}>
               <p style={{ color: "#888888" }}>Be the first to leave a review!</p>
             </div>

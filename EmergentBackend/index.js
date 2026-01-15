@@ -29,6 +29,7 @@ app.use(
     credentials: true
   })
 );
+app.options("*", cors());
 connect();
 app.get('/',(req,res)=>
 {

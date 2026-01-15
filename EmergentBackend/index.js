@@ -22,7 +22,7 @@ const corsOptions = {
     "https://intelliviaai.com",
     "http://localhost:3000",
   ],
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS","PATCH"],
   credentials: true,
 };
 

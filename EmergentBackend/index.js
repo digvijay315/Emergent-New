@@ -16,21 +16,21 @@ app.use(express.json({ limit: "50mb" }));
 app.use("/images", express.static(path.join(__dirname, "images")));
 
 /* ---------- CORS (VERY IMPORTANT ORDER) ---------- */
-// const corsOptions = {
-//   origin: [
-//     "https://admin.intelliviaai.com",
-//     "https://intelliviaai.com",
-//     "http://localhost:3000",
-//   ],
-//   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-//   credentials: true,
-// };
+const corsOptions = {
+  origin: [
+    "https://admin.intelliviaai.com",
+    "https://intelliviaai.com",
+    "http://localhost:3000",
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true,
+};
 
-// app.use(cors(corsOptions));
-// app.options("*", cors(corsOptions)); 
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions)); 
 
-app.use(cors()); 
-// ✅ This allows all origins, no credentials
+// app.use(cors()); 
+
 
 
 /* ---------- DB ---------- */

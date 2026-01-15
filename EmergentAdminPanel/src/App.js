@@ -12,6 +12,7 @@ import Enquiry from "./components/Bureau/ContactUs/enquiry";
 import Blog from "./components/Bureau/Blog/blog";
 import GaReport from "./components/Bureau/Report/ga";
 import AdminSettings from "./components/Bureau/Settings/settings";
+import Feedback from "./components/Bureau/Feedback/feedback";
 
 
 
@@ -34,6 +35,7 @@ function App() {
         <Route path="/blog" element={<Blog/>}></Route>
         <Route path="/report" element={<GaReport/>}></Route>
         <Route path="/settings" element={<AdminSettings/>}></Route>
+        <Route path="/feedback" element={<Feedback/>}></Route>
     
         {/* </Route> */}
       </Routes>

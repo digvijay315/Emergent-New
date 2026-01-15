@@ -6,8 +6,8 @@ import { toast } from "sonner";
 import Header from "@/components/Header";
 import Chatbot from "@/components/Chatbot";
 import Footer from "@/components/Footer";
+import api from "../../components/api"
 
-const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 export const Feedback = () => {
   const [formData, setFormData] = useState({
@@ -16,6 +16,7 @@ export const Feedback = () => {
     industry: "",
     rating: 0,
     feedback: "",
+    isApproved:false
   });
   const [hoveredStar, setHoveredStar] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -29,10 +30,10 @@ export const Feedback = () => {
 
   const fetchApprovedReviews = async () => {
     try {
-      const response = await fetch(`${API_URL}/api/feedback?approved_only=true`);
-      if (response.ok) {
-        const data = await response.json();
-        setApprovedReviews(data);
+      const response = await api.get(`api/feedback/Get-approved-feedback`);
+
+      if ( response.status===200) {
+        setApprovedReviews(response.data.feedback);
       }
     } catch (error) {
       console.error("Error fetching reviews:", error);
@@ -40,6 +41,8 @@ export const Feedback = () => {
       setLoading(false);
     }
   };
+  console.log(approvedReviews);
+  
 
   const handleChange = (e) => {
     setFormData({
@@ -59,17 +62,25 @@ export const Feedback = () => {
       return;
     }
 
+
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(`${API_URL}/api/feedback`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+ const response = await toast.promise(
+       api.post("api/feedback/Save-feedback", formData),
+       {
+         loading: "Feedback Submitting...",
+         success: (res) =>
+           res.data.message || "Feedback Submitted successfully!",
+         error: (err) =>
+           err.response?.data?.message ||
+           err.response?.data?.errors?.[0] ||
+           "Something went wrong. Please try again.",
+       }
+     );
+console.log(response);
 
-      if (response.ok) {
-        setSubmitted(true);
+
         setFormData({
           full_name: "",
           company_name: "",
@@ -77,15 +88,14 @@ export const Feedback = () => {
           rating: 0,
           feedback: "",
         });
-      } else {
-        toast.error("Failed to submit feedback. Please try again.");
-      }
+      
     } catch (error) {
       toast.error("Failed to submit feedback. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
   };
+
 
   const StarRating = ({ rating, interactive = false, size = 24 }) => (
     <div style={{ display: "flex", gap: "4px" }}>
@@ -394,7 +404,7 @@ export const Feedback = () => {
                   }}
                 >
                   <StarRating rating={review.rating} size={20} />
-                  <p style={{ color: "#111111", fontStyle: "italic" }}>"{review.feedback}"</p>
+                  <p style={{ color: "#111111", fontStyle: "italic" }}>&quot;{review.feedback}&quot;</p>
                   <div style={{ borderTop: "1px solid #e5e5e5", paddingTop: "16px" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
                       <User size={16} color="#0066cc" />
@@ -418,9 +428,14 @@ export const Feedback = () => {
                       >
                         {review.industry}
                       </span>
-                      <span style={{ fontSize: "0.75rem", color: "#888888" }}>
-                        {formatDate(review.created_at)}
-                      </span>
+                  <span style={{ fontSize: "0.75rem", color: "#888888" }}>
+                      {new Date(review.createdAt).toLocaleDateString("en-IN", {
+                        day: "2-digit",
+                        month: "short",
+                        year: "numeric",
+                      })}
+                    </span>
+
                     </div>
                   </div>
                 </div>

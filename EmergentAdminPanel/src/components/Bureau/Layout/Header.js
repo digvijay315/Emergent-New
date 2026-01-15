@@ -20,7 +20,7 @@ const navigate=useNavigate()
     { name: "Dashboard", href: "/dashboard" },
     { name: "Booking Appointment", href: "/booking-appointment-details" },
     { name: "Enquiry", href: "/enquiry-details" },
-    { name: "Feedback", href: "/billing" },
+    { name: "Feedback", href: "/feedback" },
     { name: "Blog", href: "/blog" },
     { name: "Report", href: "/report" },
     { name: "Settings", href: "/settings" },

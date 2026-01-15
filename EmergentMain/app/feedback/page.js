@@ -390,7 +390,7 @@ console.log(response);
                 gap: "24px",
               }}
             >
-              {approvedReviews.map((review) => (
+              {approvedReviews?.map((review) => (
                 <div
                   key={review.id}
                   style={{

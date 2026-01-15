@@ -28,6 +28,7 @@ export const Header = () => {
     { path: "/security", label: "Security" },
     // { path: "/leadership", label: "Leadership" },
     { path: "/about", label: "About" },
+    
   ];
 
   return (

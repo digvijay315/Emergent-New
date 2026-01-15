@@ -23,6 +23,7 @@ const navigate=useNavigate()
     { name: "Feedback", href: "/billing" },
     { name: "Blog", href: "/blog" },
     { name: "Report", href: "/report" },
+    { name: "Settings", href: "/settings" },
   ];
 
 

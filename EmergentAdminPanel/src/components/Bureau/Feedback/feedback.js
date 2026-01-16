@@ -231,9 +231,9 @@ const [viewType, setViewType] = useState("grid"); // grid | list
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">Blog</h1>
+            <h1 className="text-2xl font-bold text-gray-900">Feedback</h1>
             <p className="text-gray-600">
-              Manage your blog's
+              Manage your feedback's
             </p>
           </div>
 

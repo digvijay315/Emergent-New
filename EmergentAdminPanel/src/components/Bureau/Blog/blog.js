@@ -210,6 +210,7 @@ useEffect(() => {
   }
 }, [viewBlog]);
 
+const [viewType, setViewType] = useState("grid"); // grid | list
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -238,6 +239,29 @@ useEffect(() => {
     
      Add New Blog
   </button>
+           <div className="flex justify-end gap-2 mb-4">
+  <button
+    onClick={() => setViewType("grid")}
+    className={`px-3 py-2 rounded-md border ${
+      viewType === "grid"
+        ? "bg-gray-900 text-white"
+        : "bg-white hover:bg-gray-100"
+    }`}
+  >
+    Grid View
+  </button>
+
+  <button
+    onClick={() => setViewType("list")}
+    className={`px-3 py-2 rounded-md border ${
+      viewType === "list"
+        ? "bg-gray-900 text-white"
+        : "bg-white hover:bg-gray-100"
+    }`}
+  >
+    List View
+  </button>
+</div>
 {open && (
   <BlogModal
     open={open}
@@ -300,119 +324,224 @@ useEffect(() => {
         </div>
 
         {/* Profiles Grid */}
-        <div className="w-full">
-          {/* Loading Spinner */}
-          {loading ? (
-            <div className="w-full flex flex-wrap justify-center gap-6">
-              {[...Array(limit)].map((_, i) => (
-                <div
-                  key={i}
-                  className="bg-gray-100 animate-pulse rounded-lg shadow p-4 w-80 h-64"
-                >
-                  <div className="flex items-center mb-4">
-                    <div className="h-12 w-12 rounded-full bg-gray-300 mr-3" />
-                    <div className="flex flex-col space-y-2 w-2/3">
-                      <div className="h-3 bg-gray-300 rounded w-3/4" />
-                      <div className="h-3 bg-gray-300 rounded w-1/2" />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="h-3 bg-gray-300 rounded w-full" />
-                    <div className="h-3 bg-gray-300 rounded w-5/6" />
-                    <div className="h-3 bg-gray-300 rounded w-2/3" />
-                  </div>
-                </div>
-              ))}
+   <div className="w-full">
+
+
+  {/* ================= LOADING ================= */}
+  {loading ? (
+    viewType === "grid" ? (
+      <div className="w-full flex flex-wrap justify-center gap-6">
+        {[...Array(limit)].map((_, i) => (
+          <div
+            key={i}
+            className="bg-gray-100 animate-pulse rounded-lg shadow p-4 w-80 h-64"
+          >
+            <div className="flex items-center mb-4">
+              <div className="h-12 w-12 rounded-full bg-gray-300 mr-3" />
+              <div className="flex flex-col space-y-2 w-2/3">
+                <div className="h-3 bg-gray-300 rounded w-3/4" />
+                <div className="h-3 bg-gray-300 rounded w-1/2" />
+              </div>
             </div>
-          ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-  {all_blog?.map((blog) => (
-    <div
-      key={blog._id}
-      className="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col"
-    >
- <div className="w-full mb-4 overflow-hidden rounded-lg shadow-lg">
-  <img
-    src={blog.image}
-    alt={blog.title}
-    className="w-full h-48 object-cover rounded-lg transform transition duration-300 hover:scale-105"
-  />
-</div>
-
-      {/* Blog Header */}
-      <div className="flex items-center justify-between mb-4">
-        <div>
-          <h2 className="text-lg font-semibold">{blog?.title || ""}</h2>
-
-        </div>
-
-        {/* Active / Inactive Toggle */}
-        <label className="inline-flex relative items-center cursor-pointer">
-          <input
-            type="checkbox"
-            className="sr-only peer"
-            checked={blog.isActive}
-            onChange={() => toggleBlogStatus(blog._id, !blog.isActive)}
-          />
-          <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-green-600 transition-colors"></div>
-          <span className="ml-3 text-sm font-medium text-gray-900">
-            {blog.isActive ? "Active" : "Inactive"}
-          </span>
-        </label>
+            <div className="space-y-2">
+              <div className="h-3 bg-gray-300 rounded w-full" />
+              <div className="h-3 bg-gray-300 rounded w-5/6" />
+              <div className="h-3 bg-gray-300 rounded w-2/3" />
+            </div>
+          </div>
+        ))}
       </div>
-
-      {/* Blog Description / Info */}
-      <div className="space-y-2 text-sm text-gray-600 flex-1">
-        <div className="flex items-center gap-2">
-          <StickyNote className="h-4 w-4 text-gray-400" />
-          <span
-            dangerouslySetInnerHTML={{
-              __html: blog?.fullBlog?.substring(0, 100) + "...",
-            }}
-          />
-            {/* View Full Blog Icon */}
-  <button
-    onClick={() => setViewBlog(blog.fullBlog)}
-    className="ml-2 text-blue-600 hover:text-blue-800"
-    title="View Full Blog"
-  >
-    <Eye className="h-4 w-4" />
-  </button>
-        </div>
-
-        <div className="flex items-center gap-2">
-          <Calendar className="h-4 w-4 text-gray-400" />
-          <span>{new Date(blog?.createdAt).toLocaleDateString()}</span>
-        </div>
+    ) : (
+      <div className="bg-white rounded-lg shadow overflow-x-auto">
+        <table className="min-w-full">
+          <tbody>
+            {[...Array(limit)].map((_, i) => (
+              <tr key={i} className="animate-pulse border-t">
+                {[...Array(6)].map((_, j) => (
+                  <td key={j} className="px-4 py-3">
+                    <div className="h-3 bg-gray-300 rounded w-full"></div>
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-
-      {/* Blog Actions */}
-      <div className="flex gap-2 mt-4">
-        {/* Edit Blog */}
-        <button
-          onClick={() => openEditModal(blog)}
-          className="bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md flex-1 flex items-center justify-center"
-        >
-          <Edit className="mr-2 h-4 w-4" />
-          Edit
-        </button>
-
-        {/* Delete Blog */}
-        <button
-          onClick={() => delete_blog(blog._id)}
-          className="bg-red-600 hover:bg-red-700 text-white py-2 rounded-md flex-1 flex items-center justify-center"
-        >
-          <Trash className="mr-2 h-4 w-4" />
-          Delete
-        </button>
-      </div>
+    )
+  ) : all_blog?.length === 0 ? (
+    <div className="text-center py-20 text-gray-500">
+      No blogs found
     </div>
-  ))}
-</div>
+  ) : (
+    <>
+      {/* ================= GRID VIEW ================= */}
+      {viewType === "grid" && (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {all_blog?.map((blog) => (
+            <div
+              key={blog._id}
+              className="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col"
+            >
+              <div className="w-full mb-4 overflow-hidden rounded-lg shadow-lg">
+                <img
+                  src={blog.image}
+                  alt={blog.title}
+                  className="w-full h-48 object-cover rounded-lg transform transition duration-300 hover:scale-105"
+                />
+              </div>
 
-          )}
+              {/* Blog Header */}
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h2 className="text-lg font-semibold">{blog?.title || ""}</h2>
+                </div>
 
-          {/* Pagination Controls */}
+                {/* Active / Inactive Toggle */}
+                <label className="inline-flex relative items-center cursor-pointer">
+                  <input
+                    type="checkbox"
+                    className="sr-only peer"
+                    checked={blog.isActive}
+                    onChange={() => toggleBlogStatus(blog._id, !blog.isActive)}
+                  />
+                  <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-green-600 transition-colors"></div>
+                  <span className="ml-3 text-sm font-medium text-gray-900">
+                    {blog.isActive ? "Active" : "Inactive"}
+                  </span>
+                </label>
+              </div>
+
+              {/* Blog Description / Info */}
+              <div className="space-y-2 text-sm text-gray-600 flex-1">
+                <div className="flex items-center gap-2">
+                  <StickyNote className="h-4 w-4 text-gray-400" />
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: blog?.fullBlog?.substring(0, 100) + "...",
+                    }}
+                  />
+                  {/* View Full Blog Icon */}
+                  <button
+                    onClick={() => setViewBlog(blog.fullBlog)}
+                    className="ml-2 text-blue-600 hover:text-blue-800"
+                    title="View Full Blog"
+                  >
+                    <Eye className="h-4 w-4" />
+                  </button>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <Calendar className="h-4 w-4 text-gray-400" />
+                  <span>{new Date(blog?.createdAt).toLocaleDateString()}</span>
+                </div>
+              </div>
+
+              {/* Blog Actions */}
+              <div className="flex gap-2 mt-4">
+                <button
+                  onClick={() => openEditModal(blog)}
+                  className="bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md flex-1 flex items-center justify-center"
+                >
+                  <Edit className="mr-2 h-4 w-4" />
+                  Edit
+                </button>
+
+                <button
+                  onClick={() => delete_blog(blog._id)}
+                  className="bg-red-600 hover:bg-red-700 text-white py-2 rounded-md flex-1 flex items-center justify-center"
+                >
+                  <Trash className="mr-2 h-4 w-4" />
+                  Delete
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* ================= LIST VIEW ================= */}
+      {viewType === "list" && (
+      <div className="overflow-x-auto bg-white rounded-lg shadow">
+    <table className="min-w-full">
+      <thead className="bg-gray-100">
+        <tr>
+          <th className="px-4 py-3 text-left">Title</th>
+          <th className="px-4 py-3 text-left">Date</th>
+          <th className="px-4 py-3 text-left">Status</th>
+          <th className="px-4 py-3 text-left">Full Blog</th>
+          <th className="px-4 py-3 text-left">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {all_blog?.map((blog) => (
+          <tr key={blog._id} className="border-t hover:bg-gray-50">
+            {/* Title */}
+            <td className="px-4 py-3 font-medium">{blog.title}</td>
+
+            {/* Date */}
+            <td className="px-4 py-3 text-sm text-gray-500">
+              {new Date(blog.createdAt).toLocaleDateString()}
+            </td>
+
+            {/* Status Toggle */}
+            <td className="px-4 py-3">
+              <label className="inline-flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  className="sr-only peer"
+                  checked={blog.isActive}
+                  onChange={() =>
+                    toggleBlogStatus(blog._id, !blog.isActive)
+                  }
+                />
+                <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-green-600 transition-colors"></div>
+                <span className="ml-2 text-sm">
+                  {blog.isActive ? "Active" : "Inactive"}
+                </span>
+              </label>
+            </td>
+
+            {/* Full Blog */}
+            <td className="px-4 py-3 text-sm text-gray-600">
+              <div className="flex items-center gap-2">
+                <span>
+                  {blog.fullBlog?.substring(0, 100)}...
+                </span>
+                <button
+                  onClick={() => setViewBlog(blog.fullBlog)}
+                  className="text-blue-600 hover:text-blue-800"
+                  title="View Full Blog"
+                >
+                  <Eye className="h-4 w-4" />
+                </button>
+              </div>
+            </td>
+
+            {/* Actions */}
+            <td className="px-4 py-3 flex gap-2">
+              <button
+                onClick={() => openEditModal(blog)}
+                className="bg-blue-600 text-white px-3 py-1 rounded"
+              >
+                Edit
+              </button>
+              <button
+                onClick={() => delete_blog(blog._id)}
+                className="bg-red-600 text-white px-3 py-1 rounded"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+      )}
+    </>
+  )}
+      {/* Pagination Controls */}
           {totalPages > 1 && (
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 mt-8">
               {/* Limit Dropdown */}
@@ -466,7 +595,8 @@ useEffect(() => {
               </div>
             </div>
           )}
-        </div>
+</div>
+
 
         {/* Empty State */}
         {all_blog?.length === 0 && (
@@ -498,3 +628,6 @@ useEffect(() => {
     </div>
   );
 }
+
+
+

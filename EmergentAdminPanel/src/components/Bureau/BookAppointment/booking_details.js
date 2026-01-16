@@ -371,6 +371,7 @@ const [loading_import, setloading_import] = useState(false);
     }
   };
 
+const [viewType, setViewType] = useState("grid"); // grid | list
 
 
   return (
@@ -398,6 +399,31 @@ const [loading_import, setloading_import] = useState(false);
     
      {exportLoading?"Exporting Data...":"Export To Excel"}
   </button>
+
+  <div className="flex justify-end gap-2 mb-4">
+  <button
+    onClick={() => setViewType("grid")}
+    className={`px-3 py-2 rounded-md border ${
+      viewType === "grid"
+        ? "bg-gray-900 text-white"
+        : "bg-white hover:bg-gray-100"
+    }`}
+  >
+    Grid View
+  </button>
+
+  <button
+    onClick={() => setViewType("list")}
+    className={`px-3 py-2 rounded-md border ${
+      viewType === "list"
+        ? "bg-gray-900 text-white"
+        : "bg-white hover:bg-gray-100"
+    }`}
+  >
+    List View
+  </button>
+</div>
+
 </div>
 
 
@@ -414,30 +440,6 @@ const [loading_import, setloading_import] = useState(false);
             />
           </div>
 
-          {/* <select
-            value={genderFilter}
-            onChange={(e) => setGenderFilter(e.target.value)}
-            className="border border-gray-300 rounded-md px-3 py-2"
-          >
-            <option value="all">All Genders</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-          </select> */}
-
-          {/* <select
-            value={statusFilter}
-            onChange={(e) => setStatusFilter(e.target.value)}
-            className="border border-gray-300 rounded-md px-3 py-2"
-          >
-            <option value="all">All Status</option>
-            <option value="active">Active</option>
-            <option value="inactive">Inactive</option>
-          </select> */}
-
-          {/* <button className="border border-gray-300 rounded-md px-4 py-2 flex items-center hover:bg-gray-100">
-            <Filter className="mr-2 h-4 w-4" />
-            More Filters
-          </button> */}
         </div>
 
         {/* Stats */}
@@ -476,123 +478,153 @@ const [loading_import, setloading_import] = useState(false);
           </div>
         </div>
 
-        {/* Profiles Grid */}
-        <div className="w-full">
-          {/* Loading Spinner */}
-          {loading ? (
-            <div className="w-full flex flex-wrap justify-center gap-6">
-              {[...Array(limit)].map((_, i) => (
-                <div
-                  key={i}
-                  className="bg-gray-100 animate-pulse rounded-lg shadow p-4 w-80 h-64"
-                >
-                  <div className="flex items-center mb-4">
-                    <div className="h-12 w-12 rounded-full bg-gray-300 mr-3" />
-                    <div className="flex flex-col space-y-2 w-2/3">
-                      <div className="h-3 bg-gray-300 rounded w-3/4" />
-                      <div className="h-3 bg-gray-300 rounded w-1/2" />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="h-3 bg-gray-300 rounded w-full" />
-                    <div className="h-3 bg-gray-300 rounded w-5/6" />
-                    <div className="h-3 bg-gray-300 rounded w-2/3" />
-                  </div>
-                </div>
-              ))}
+        {/* Data Grid */}
+      <div className="w-full">
+  {/* Loading Spinner */}
+  {loading ? (
+    <div className="w-full flex flex-wrap justify-center gap-6">
+      {[...Array(limit)].map((_, i) => (
+        <div
+          key={i}
+          className="bg-gray-100 animate-pulse rounded-lg shadow p-4 w-80 h-64"
+        >
+          <div className="flex items-center mb-4">
+            <div className="h-12 w-12 rounded-full bg-gray-300 mr-3" />
+            <div className="flex flex-col space-y-2 w-2/3">
+              <div className="h-3 bg-gray-300 rounded w-3/4" />
+              <div className="h-3 bg-gray-300 rounded w-1/2" />
             </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          </div>
+          <div className="space-y-2">
+            <div className="h-3 bg-gray-300 rounded w-full" />
+            <div className="h-3 bg-gray-300 rounded w-5/6" />
+            <div className="h-3 bg-gray-300 rounded w-2/3" />
+          </div>
+        </div>
+      ))}
+    </div>
+  ) : (
+    <>
+      {/* ================= GRID VIEW ================= */}
+      {viewType === "grid" && (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {all_booking_details?.map((profile) => (
+            <div
+              key={profile._id}
+              className="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h2 className="text-lg font-semibold">{profile?.name}</h2>
+
+                  <p className="text-sm text-gray-500 flex items-center gap-2">
+                    <Mail className="h-4 w-4" />
+                    {profile?.email}
+                  </p>
+
+                  <p className="text-sm text-gray-500 flex items-center gap-2">
+                    <Phone className="h-4 w-4" />
+                    {profile?.country_code} {profile?.mobile_number}
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-2 text-sm text-gray-600">
+                <div className="flex items-center">
+                  <Calendar className="mr-2 h-4 w-4" />
+                  {profile?.date}
+                </div>
+                <div className="flex items-center">
+                  <Clock className="mr-2 h-4 w-4" />
+                  {profile?.time}
+                </div>
+                <div className="flex items-center">
+                  <StickyNote className="mr-2 h-4 w-4" />
+                  {profile?.notes}
+                </div>
+              </div>
+
+              <div className="flex gap-2 mt-auto pt-4">
+                <button
+                  onClick={() =>
+                    navigate("/view-profiles", {
+                      state: { id: profile._id },
+                    })
+                  }
+                  className="border border-gray-300 rounded-md py-2 flex-1 hover:bg-gray-50"
+                >
+                  Mark as Completed
+                </button>
+
+                <button
+                  onClick={() => delete_user_profile(profile._id)}
+                  className="bg-red-600 hover:bg-red-700 text-white py-2 rounded-md flex-1"
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* ================= LIST VIEW ================= */}
+      {viewType === "list" && (
+        <div className="overflow-x-auto bg-white rounded-lg shadow">
+          <table className="min-w-full">
+            <thead className="bg-gray-100">
+              <tr>
+                <th className="px-4 py-3 text-left">Name</th>
+                <th className="px-4 py-3 text-left">Email</th>
+                <th className="px-4 py-3 text-left">Phone</th>
+                <th className="px-4 py-3 text-left">Date</th>
+                <th className="px-4 py-3 text-left">Time</th>
+                <th className="px-4 py-3 text-left">Actions</th>
+              </tr>
+            </thead>
+
+            <tbody>
               {all_booking_details?.map((profile) => (
-             <div
-  key={profile._id}
-  className="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col"
->
-
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-3">
-                
-                      <div>
-                        <h2 className="text-lg font-semibold">
-                          {profile?.name || ""}
-                        </h2>
-                        <p className="text-sm text-gray-500 flex items-center gap-2">
-                          <Mail className="h-4 w-4 text-gray-400" />
-                          {profile?.email || ""}
-                        </p>
-                         <p className="text-sm text-gray-500 flex items-center gap-2">
-                          <Phone className="h-4 w-4 text-gray-400" />
-                          {profile?.country_code || ""} {profile?.mobile_number || ""}
-                        </p>
-                      </div>
-                    </div>
-                    {/* <span
-                      className={`px-2 py-1 text-xs font-semibold rounded-full ${
-                        profile.isActive
-                          ? "bg-green-100 text-green-700"
-                          : "bg-gray-200 text-gray-700"
-                      }`}
-                    >
-                      {profile.IsActive ? "Active" : "Inactive"}
-                    </span> */}
-                  </div>
-
-                  <div className="space-y-2 text-sm text-gray-600">
-                    <div className="flex items-center">
-                      <GraduationCap className="mr-2 h-4 w-4" />
-                      {profile?.industry || ""}
-                    </div>
-                    <div className="flex items-center">
-                      <Calendar className="mr-2 h-4 w-4" />
-                      {profile?.date || ""}
-                    </div>
-                       <div className="flex items-center">
-                      <Clock className="mr-2 h-4 w-4" />
-                      {profile?.time || ""}
-                    </div>
-                       <div className="flex items-center">
-                      <StickyNote className="mr-2 h-4 w-4" />
-                      {profile?.notes || ""}
-                    </div>
- 
-                  </div>
-
-
-
-
-                  <div className="flex gap-2 mt-auto pt-4">
-                                    <button
+                <tr
+                  key={profile._id}
+                  className="border-t hover:bg-gray-50"
+                >
+                  <td className="px-4 py-3">{profile?.name}</td>
+                  <td className="px-4 py-3">{profile?.email}</td>
+                  <td className="px-4 py-3">
+                    {profile?.country_code} {profile?.mobile_number}
+                  </td>
+                  <td className="px-4 py-3">{profile?.date}</td>
+                  <td className="px-4 py-3">{profile?.time}</td>
+                  <td className="px-4 py-3 flex gap-2">
+                    <button
                       onClick={() =>
                         navigate("/view-profiles", {
                           state: { id: profile._id },
                         })
                       }
-                      className="border border-gray-300 rounded-md py-2 flex-1 flex items-center justify-center hover:bg-gray-50"
+                      className="border px-3 py-1 rounded-md"
                     >
-                      <CheckCircle  className="mr-2 h-4 w-4" />
-                      Mark as Completed
+                      Complete
                     </button>
-
-                  </div>
-
-                      <div className="flex gap-2 mt-auto pt-4">
 
                     <button
                       onClick={() => delete_user_profile(profile._id)}
-                      className="bg-red-600 hover:bg-red-700 text-white py-2 rounded-md flex-1 flex items-center justify-center"
+                      className="bg-red-600 text-white px-3 py-1 rounded-md"
                     >
-                      
-                      <Trash className="mr-2 h-4 w-4" />
-                      Delete Booking
+                      Delete
                     </button>
-                  </div>
-
-                </div>
+                  </td>
+                </tr>
               ))}
-            </div>
-          )}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </>
+  )}
 
-          {/* Pagination Controls */}
+    {/* Pagination Controls */}
           {totalPages > 1 && (
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 mt-8">
               {/* Limit Dropdown */}
@@ -646,8 +678,9 @@ const [loading_import, setloading_import] = useState(false);
               </div>
             </div>
           )}
-        </div>
+</div>
 
+  
         {/* Empty State */}
         {all_booking_details?.length === 0 && (
           <div className="text-center py-12">
@@ -655,21 +688,7 @@ const [loading_import, setloading_import] = useState(false);
             <h3 className="text-lg font-medium text-gray-900 mb-2">
               No profiles found
             </h3>
-            {/* <p className="text-gray-600 mb-4">
-              {searchTerm || genderFilter !== "all" || statusFilter !== "all"
-                ? "Try adjusting your search criteria"
-                : "Get started by adding your first profile"}
-            </p> */}
-            {/* {!searchTerm &&
-              genderFilter === "all" &&
-              statusFilter === "all" && (
-                <a href="/profiles/new">
-                  <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md flex items-center mx-auto">
-                    <Plus className="mr-2 h-4 w-4" />
-                    Add Your First Profile
-                  </button>
-                </a>
-              )} */}
+           
           </div>
         )}
       </div>

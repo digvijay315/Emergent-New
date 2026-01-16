@@ -221,6 +221,7 @@ const renderStars = (rating) => {
 };
 
 
+const [viewType, setViewType] = useState("grid"); // grid | list
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -237,6 +238,30 @@ const renderStars = (rating) => {
           </div>
 
         </div>
+
+         <div className="flex justify-end gap-2 mb-4">
+  <button
+    onClick={() => setViewType("grid")}
+    className={`px-3 py-2 rounded-md border ${
+      viewType === "grid"
+        ? "bg-gray-900 text-white"
+        : "bg-white hover:bg-gray-100"
+    }`}
+  >
+    Grid View
+  </button>
+
+  <button
+    onClick={() => setViewType("list")}
+    className={`px-3 py-2 rounded-md border ${
+      viewType === "list"
+        ? "bg-gray-900 text-white"
+        : "bg-white hover:bg-gray-100"
+    }`}
+  >
+    List View
+  </button>
+</div>
 
 
 
@@ -285,111 +310,160 @@ const renderStars = (rating) => {
         </div>
 
         {/* Profiles Grid */}
-        <div className="w-full">
-          {/* Loading Spinner */}
-          {loading ? (
-            <div className="w-full flex flex-wrap justify-center gap-6">
-              {[...Array(limit)].map((_, i) => (
-                <div
-                  key={i}
-                  className="bg-gray-100 animate-pulse rounded-lg shadow p-4 w-80 h-64"
-                >
-                  <div className="flex items-center mb-4">
-                    <div className="h-12 w-12 rounded-full bg-gray-300 mr-3" />
-                    <div className="flex flex-col space-y-2 w-2/3">
-                      <div className="h-3 bg-gray-300 rounded w-3/4" />
-                      <div className="h-3 bg-gray-300 rounded w-1/2" />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="h-3 bg-gray-300 rounded w-full" />
-                    <div className="h-3 bg-gray-300 rounded w-5/6" />
-                    <div className="h-3 bg-gray-300 rounded w-2/3" />
-                  </div>
-                </div>
-              ))}
-            </div>
-          ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
-  {all_feedback?.map((review) => (
-  <div
-      key={review._id}
-      className="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col"
-    >
-{/* ⭐ Rating Stars */} 
-<div className="flex items-center justify-between mb-3"> 
-    <div className="text-lg"> {renderStars(review.rating)}
-         </div> <span className="text-sm text-gray-500"> 
-            {new Date(review.createdAt).toLocaleDateString()} 
-            </span> 
-            </div>
-
-      {/* Blog Header */}
-      <div className="flex items-center justify-between mb-4">
-        <div>
-          <h2 className="text-lg font-semibold">{review?.full_name || ""}</h2>
-
-        </div>
-
-        {/* Active / Inactive Toggle */}
-        <label className="inline-flex relative items-center cursor-pointer">
-          <input
-            type="checkbox"
-            className="sr-only peer"
-            checked={review.isApproved}
-            onChange={() => toggleBlogStatus(review._id, !review.isApproved)}
-          />
-          <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-green-600 transition-colors"></div>
-          <span className="ml-3 text-sm font-medium text-gray-900">
-            {review.isApproved ? "Approved" : "Pending"}
-          </span>
-        </label>
-      </div>
-
-      {/* Blog Description / Info */}
-      <div className="space-y-2 text-sm text-gray-600 flex-1">
-        <div className="flex items-center gap-2">
-          <span>{review?.company_name || ""}</span>
-
-        </div>
-              <div className="flex items-center gap-2">
-          <span style={{color:"blue",fontWeight:"bold"}}>{review?.industry || ""}</span>
-
-        </div>
-
-    <div className="flex items-center gap-2">
-          <span>{review?.feedback || ""}</span>
-
-        </div>
-
-        <div className="flex items-center gap-2">
-          <Calendar className="h-4 w-4 text-gray-400" />
-          <span>{new Date(review?.createdAt).toLocaleDateString()}</span>
-        </div>
-      </div>
-
-      {/* Feedback Actions */}
-      <div className="flex gap-2 mt-4">
-
-
-
-        {/* Delete Blog */}
-        <button
-          onClick={() => delete_blog(review._id)}
-          className="bg-red-600 hover:bg-red-700 text-white py-2 rounded-md flex-1 flex items-center justify-center"
+      <div className="w-full">
+  {/* Loading Spinner */}
+  {loading ? (
+    <div className="w-full flex flex-wrap justify-center gap-6">
+      {[...Array(limit)].map((_, i) => (
+        <div
+          key={i}
+          className="bg-gray-100 animate-pulse rounded-lg shadow p-4 w-80 h-64"
         >
-          <Trash className="mr-2 h-4 w-4" />
-          Delete
-        </button>
-      </div>
+          <div className="flex items-center mb-4">
+            <div className="h-12 w-12 rounded-full bg-gray-300 mr-3" />
+            <div className="flex flex-col space-y-2 w-2/3">
+              <div className="h-3 bg-gray-300 rounded w-3/4" />
+              <div className="h-3 bg-gray-300 rounded w-1/2" />
+            </div>
+          </div>
+          <div className="space-y-2">
+            <div className="h-3 bg-gray-300 rounded w-full" />
+            <div className="h-3 bg-gray-300 rounded w-5/6" />
+            <div className="h-3 bg-gray-300 rounded w-2/3" />
+          </div>
+        </div>
+      ))}
     </div>
+  ) : (
+    <>
+      {/* ================= GRID VIEW ================= */}
+      {viewType === "grid" && (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {all_feedback?.map((review) => (
+            <div
+              key={review._id}
+              className="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col"
+            >
+              {/* Rating + Date */}
+              <div className="flex items-center justify-between mb-3">
+                <div>{renderStars(review.rating)}</div>
+                <span className="text-sm text-gray-500">
+                  {new Date(review.createdAt).toLocaleDateString()}
+                </span>
+              </div>
 
-  ))}
-</div>
+              {/* Header */}
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-lg font-semibold">
+                  {review?.full_name}
+                </h2>
 
-          )}
+                {/* ✅ STATUS TOGGLE (kept) */}
+                <label className="inline-flex items-center cursor-pointer">
+                  <input
+                    type="checkbox"
+                    className="sr-only peer"
+                    checked={review.isApproved}
+                    onChange={() =>
+                      toggleBlogStatus(review._id, !review.isApproved)
+                    }
+                  />
+                  <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-green-600 transition"></div>
+                  <span className="ml-3 text-sm">
+                    {review.isApproved ? "Approved" : "Pending"}
+                  </span>
+                </label>
+              </div>
 
-          {/* Pagination Controls */}
+              {/* Content */}
+              <div className="space-y-2 text-sm text-gray-600 flex-1">
+                <div>{review?.company_name}</div>
+                <div className="font-bold text-blue-600">
+                  {review?.industry}
+                </div>
+                <div>{review?.feedback}</div>
+              </div>
+
+              {/* Actions */}
+              <button
+                onClick={() => delete_blog(review._id)}
+                className="mt-4 bg-red-600 hover:bg-red-700 text-white py-2 rounded-md flex items-center justify-center"
+              >
+                <Trash className="mr-2 h-4 w-4" />
+                Delete
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* ================= LIST VIEW ================= */}
+      {viewType === "list" && (
+        <div className="overflow-x-auto bg-white rounded-lg shadow">
+          <table className="min-w-full">
+            <thead className="bg-gray-100">
+              <tr>
+                <th className="px-4 py-3 text-left">Name</th>
+                <th className="px-4 py-3 text-left">Company</th>
+                <th className="px-4 py-3 text-left">Industry</th>
+                <th className="px-4 py-3 text-left">Rating</th>
+                <th className="px-4 py-3 text-left">Feedback</th>
+                <th className="px-4 py-3 text-left">Status</th>
+                <th className="px-4 py-3 text-left">Actions</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {all_feedback?.map((review) => (
+                <tr
+                  key={review._id}
+                  className="border-t hover:bg-gray-50"
+                >
+                  <td className="px-4 py-3">{review.full_name}</td>
+                  <td className="px-4 py-3">{review.company_name}</td>
+                  <td className="px-4 py-3 font-semibold text-blue-600">
+                    {review.industry}
+                  </td>
+                  <td className="px-4 py-3">
+                    {renderStars(review.rating)}
+                  </td>
+                  <td className="px-4 py-3">{review.feedback}</td>
+
+                  {/* ✅ STATUS TOGGLE (kept in list view) */}
+                  <td className="px-4 py-3">
+                    <label className="inline-flex items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        className="sr-only peer"
+                        checked={review.isApproved}
+                        onChange={() =>
+                          toggleBlogStatus(
+                            review._id,
+                            !review.isApproved
+                          )
+                        }
+                      />
+                      <div className="w-10 h-5 bg-gray-200 rounded-full peer peer-checked:bg-green-600"></div>
+                    </label>
+                  </td>
+
+                  <td className="px-4 py-3">
+                    <button
+                      onClick={() => delete_blog(review._id)}
+                      className="bg-red-600 text-white px-3 py-1 rounded-md"
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </>
+  )}
+       {/* Pagination Controls */}
           {totalPages > 1 && (
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 mt-8">
               {/* Limit Dropdown */}
@@ -443,7 +517,8 @@ const renderStars = (rating) => {
               </div>
             </div>
           )}
-        </div>
+</div>
+
 
         {/* Empty State */}
         {all_feedback?.length === 0 && (

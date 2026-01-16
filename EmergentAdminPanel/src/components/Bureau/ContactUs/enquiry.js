@@ -338,7 +338,7 @@ const [loading_import, setloading_import] = useState(false);
     }
   };
 
-
+const [viewType, setViewType] = useState("grid"); // grid | list
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -369,6 +369,29 @@ const [loading_import, setloading_import] = useState(false);
     
      {exportLoading?"Exporting Data...":"Export To Excel"}
   </button>
+   <div className="flex justify-end gap-2 mb-4">
+  <button
+    onClick={() => setViewType("grid")}
+    className={`px-3 py-2 rounded-md border ${
+      viewType === "grid"
+        ? "bg-gray-900 text-white"
+        : "bg-white hover:bg-gray-100"
+    }`}
+  >
+    Grid View
+  </button>
+
+  <button
+    onClick={() => setViewType("list")}
+    className={`px-3 py-2 rounded-md border ${
+      viewType === "list"
+        ? "bg-gray-900 text-white"
+        : "bg-white hover:bg-gray-100"
+    }`}
+  >
+    List View
+  </button>
+</div>
 </div>
 
 
@@ -448,119 +471,154 @@ const [loading_import, setloading_import] = useState(false);
         </div>
 
         {/* Profiles Grid */}
-        <div className="w-full">
-          {/* Loading Spinner */}
-          {loading ? (
-            <div className="w-full flex flex-wrap justify-center gap-6">
-              {[...Array(limit)].map((_, i) => (
-                <div
-                  key={i}
-                  className="bg-gray-100 animate-pulse rounded-lg shadow p-4 w-80 h-64"
-                >
-                  <div className="flex items-center mb-4">
-                    <div className="h-12 w-12 rounded-full bg-gray-300 mr-3" />
-                    <div className="flex flex-col space-y-2 w-2/3">
-                      <div className="h-3 bg-gray-300 rounded w-3/4" />
-                      <div className="h-3 bg-gray-300 rounded w-1/2" />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="h-3 bg-gray-300 rounded w-full" />
-                    <div className="h-3 bg-gray-300 rounded w-5/6" />
-                    <div className="h-3 bg-gray-300 rounded w-2/3" />
-                  </div>
-                </div>
-              ))}
+   <div className="w-full">
+  {/* Loading Spinner */}
+  {loading ? (
+    <div className="w-full flex flex-wrap justify-center gap-6">
+      {[...Array(limit)].map((_, i) => (
+        <div
+          key={i}
+          className="bg-gray-100 animate-pulse rounded-lg shadow p-4 w-80 h-64"
+        >
+          <div className="flex items-center mb-4">
+            <div className="h-12 w-12 rounded-full bg-gray-300 mr-3" />
+            <div className="flex flex-col space-y-2 w-2/3">
+              <div className="h-3 bg-gray-300 rounded w-3/4" />
+              <div className="h-3 bg-gray-300 rounded w-1/2" />
             </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          </div>
+          <div className="space-y-2">
+            <div className="h-3 bg-gray-300 rounded w-full" />
+            <div className="h-3 bg-gray-300 rounded w-5/6" />
+            <div className="h-3 bg-gray-300 rounded w-2/3" />
+          </div>
+        </div>
+      ))}
+    </div>
+  ) : (
+    <>
+      {/* ================= GRID VIEW ================= */}
+      {viewType === "grid" && (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {all_enquiry_details?.map((profile) => (
+            <div
+              key={profile._id}
+              className="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col"
+            >
+              <div className="mb-4">
+                <h2 className="text-lg font-semibold">{profile?.name}</h2>
+
+                <p className="text-sm text-gray-500 flex items-center gap-2">
+                  <Mail className="h-4 w-4" />
+                  {profile?.email}
+                </p>
+
+                <p className="text-sm text-gray-500 flex items-center gap-2">
+                  <Phone className="h-4 w-4" />
+                  {profile?.country_code} {profile?.mobile_number}
+                </p>
+              </div>
+
+              <div className="space-y-2 text-sm text-gray-600">
+                <div className="flex items-center">
+                  <GraduationCap className="mr-2 h-4 w-4" />
+                  {profile?.industry}
+                </div>
+
+                <div className="flex items-center">
+                  <Building2 className="mr-2 h-4 w-4" />
+                  {profile?.company}
+                </div>
+
+                <div className="flex items-center">
+                  <MessageSquareText className="mr-2 h-4 w-4" />
+                  {profile?.message}
+                </div>
+              </div>
+
+              <div className="flex gap-2 mt-auto pt-4">
+                <button
+                  onClick={() =>
+                    navigate("/view-profiles", {
+                      state: { id: profile._id },
+                    })
+                  }
+                  className="border border-gray-300 rounded-md py-2 flex-1 hover:bg-gray-50"
+                >
+                  Mark as Completed
+                </button>
+
+                <button
+                  onClick={() => delete_user_profile(profile._id)}
+                  className="bg-red-600 hover:bg-red-700 text-white py-2 rounded-md flex-1"
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* ================= LIST VIEW ================= */}
+      {viewType === "list" && (
+        <div className="overflow-x-auto bg-white rounded-lg shadow">
+          <table className="min-w-full">
+            <thead className="bg-gray-100">
+              <tr>
+                <th className="px-4 py-3 text-left">Name</th>
+                <th className="px-4 py-3 text-left">Email</th>
+                <th className="px-4 py-3 text-left">Phone</th>
+                <th className="px-4 py-3 text-left">Industry</th>
+                <th className="px-4 py-3 text-left">Company</th>
+                <th className="px-4 py-3 text-left">Message</th>
+                <th className="px-4 py-3 text-left">Actions</th>
+              </tr>
+            </thead>
+
+            <tbody>
               {all_enquiry_details?.map((profile) => (
-             <div
-                key={profile._id}
-                className="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col"
-              >
+                <tr
+                  key={profile._id}
+                  className="border-t hover:bg-gray-50"
+                >
+                  <td className="px-4 py-3">{profile?.name}</td>
+                  <td className="px-4 py-3">{profile?.email}</td>
+                  <td className="px-4 py-3">
+                    {profile?.country_code} {profile?.mobile_number}
+                  </td>
+                  <td className="px-4 py-3">{profile?.industry}</td>
+                  <td className="px-4 py-3">{profile?.company}</td>
+                  <td className="px-4 py-3">{profile?.message}</td>
 
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-3">
-                
-                      <div>
-                        <h2 className="text-lg font-semibold">
-                          {profile?.name || ""}
-                        </h2>
-                        <p className="text-sm text-gray-500 flex items-center gap-2">
-                          <Mail className="h-4 w-4 text-gray-400" />
-                          {profile?.email || ""}
-                        </p>
-                         <p className="text-sm text-gray-500 flex items-center gap-2">
-                          <Phone className="h-4 w-4 text-gray-400" />
-                          {profile?.country_code || ""} {profile?.mobile_number || ""}
-                        </p>
-                      </div>
-                    </div>
-                    {/* <span
-                      className={`px-2 py-1 text-xs font-semibold rounded-full ${
-                        profile.isActive
-                          ? "bg-green-100 text-green-700"
-                          : "bg-gray-200 text-gray-700"
-                      }`}
-                    >
-                      {profile.IsActive ? "Active" : "Inactive"}
-                    </span> */}
-                  </div>
-
-                  <div className="space-y-2 text-sm text-gray-600">
-                    <div className="flex items-center">
-                      <GraduationCap className="mr-2 h-4 w-4" />
-                      {profile?.industry || ""}
-                    </div>
-                    <div className="flex items-center">
-                      <Building2 className="mr-2 h-4 w-4" />
-                      {profile?.company || ""}
-                    </div>
-
-                       <div className="flex items-center">
-                      <MessageSquareText className="mr-2 h-4 w-4" />
-                      {profile?.message || ""}
-                    </div>
- 
-                  </div>
-
-
-
-
-                  <div className="flex gap-2 mt-auto pt-4">
-                                    <button
+                  <td className="px-4 py-3 flex gap-2">
+                    <button
                       onClick={() =>
                         navigate("/view-profiles", {
                           state: { id: profile._id },
                         })
                       }
-                      className="border border-gray-300 rounded-md py-2 flex-1 flex items-center justify-center hover:bg-gray-50"
+                      className="border px-3 py-1 rounded-md"
                     >
-                      <CheckCircle  className="mr-2 h-4 w-4" />
-                      Mark as Completed
+                      Complete
                     </button>
-
-                  </div>
-
-                      <div className="flex gap-2 mt-auto pt-4">
 
                     <button
                       onClick={() => delete_user_profile(profile._id)}
-                      className="bg-red-600 hover:bg-red-700 text-white py-2 rounded-md flex-1 flex items-center justify-center"
+                      className="bg-red-600 text-white px-3 py-1 rounded-md"
                     >
-                      
-                      <Trash className="mr-2 h-4 w-4" />
-                      Delete Enquiry
+                      Delete
                     </button>
-                  </div>
-
-                </div>
+                  </td>
+                </tr>
               ))}
-            </div>
-          )}
-
-          {/* Pagination Controls */}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </>
+  )}
+    {/* Pagination Controls */}
           {totalPages > 1 && (
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 mt-8">
               {/* Limit Dropdown */}
@@ -614,8 +672,9 @@ const [loading_import, setloading_import] = useState(false);
               </div>
             </div>
           )}
-        </div>
+</div>
 
+   
         {/* Empty State */}
         {all_enquiry_details?.length === 0 && (
           <div className="text-center py-12">

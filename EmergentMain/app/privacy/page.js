@@ -578,8 +578,8 @@ systems uses client API keys.</li>
             {/* Contact Information */}
           <div
   style={{
-    padding: "32px",
-    backgroundColor: "#fafafa",
+    padding: "0px",
+    backgroundColor:"#fff6a5",
     borderRadius: "4px",
     border: "1px solid #e5e5e5",
     color:"#1a1a1a",
@@ -592,18 +592,18 @@ systems uses client API keys.</li>
       fontSize: "24px",
       fontWeight: 600,
       marginBottom: "16px",
-      display: "inline-block",padding: "2px 6px", margin: 0,backgroundColor:"yellow"
+      display: "inline-block",padding: "2px 6px", margin: 0,
       
     }}
   >
     17. Contact Information
   </h2><br></br>
 
-  <p style={{ display: "inline-block",padding: "2px 6px", margin: 0,backgroundColor:"yellow" }}>
+  <p style={{ display: "inline-block",padding: "2px 6px", margin: 0, }}>
     IntelliviaAI Ltd
   </p><br></br>
 
-  <p style={{ display: "inline-block",padding: "2px 6px", margin: 0,backgroundColor:"yellow" }}>
+  <p style={{ display: "inline-block",padding: "2px 6px", margin: 0, }}>
     Email:{" "}
     <a
       href="mailto:info@intelliviaai.com"
@@ -613,7 +613,7 @@ systems uses client API keys.</li>
     </a>
   </p><br></br>
 
-  <p style={{ display: "inline-block",padding: "2px 6px", margin: 0,backgroundColor:"yellow" }}>
+  <p style={{ display: "inline-block",padding: "2px 6px", margin: 0, }}>
     Phone:{" "}
     <a
       href="tel:+44 7734862101"
@@ -624,10 +624,10 @@ systems uses client API keys.</li>
     </a>
   </p><br></br>
 
-  <p style={{ display: "inline-block",padding: "2px 6px", margin: 0,backgroundColor:"yellow" }}>
+  <p style={{ display: "inline-block",padding: "2px 6px", margin: 0, }}>
     Jurisdiction: England & Wales
   </p>
-</div>
+</div><br></br>
   <p style={{ color: "#666666", margin: 4 }}>
     This Privacy Policy ensures full compliance with GDPR, CCPA/CPRA, and professional
 enterprise standards. It reflects IntelliviaAI’s client-owned infrastructure model, AI

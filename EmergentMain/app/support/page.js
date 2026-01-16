@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import React from "react";
 
-export const Privacy = () => {
+export const Support = () => {
   return (
     <div>
         <Header/>
@@ -129,7 +129,7 @@ you contact us.
          <div
   style={{
     marginBottom: "48px",
-    backgroundColor: "yellow", // ✅ light yellow background
+    backgroundColor: "#fff6a5", // ✅ light yellow background
     padding: "24px",
     borderRadius: "6px",
   }}
@@ -504,14 +504,13 @@ Changes will be published on our website and become effective immediately upon p
 </div>
 
             {/* Contact Information */}
- <div style={{ marginBottom: "48px" }}>
+ <div style={{ marginBottom: "48px",backgroundColor:"#fff6a5",padding:"24px" }}>
   <h2
     style={{
       fontSize: "28px",
       fontWeight: 600,
       marginBottom: "16px",
       color: "#1a1a1a",
-      backgroundColor:"yellow",
       display:"inline-block",
       
     }}
@@ -522,7 +521,6 @@ Changes will be published on our website and become effective immediately upon p
   <p
     className="body-text"
     style={{
-      backgroundColor: "yellow",
       display: "inline-block",
       padding: "8px 12px",
       borderRadius: "4px",
@@ -554,4 +552,4 @@ Changes will be published on our website and become effective immediately upon p
   );
 };
 
-export default Privacy;
+export default Support;

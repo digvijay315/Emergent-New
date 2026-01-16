@@ -310,37 +310,37 @@ export default function Feedback() {
         </div>
 
         {/* Profiles Grid */}
-        <div className="w-full">
-          {/* Loading Spinner */}
-          {loading ? (
-            <div className="w-full flex flex-wrap justify-center gap-6">
-              {[...Array(limit)].map((_, i) => (
-                <div
-                  key={i}
-                  className="bg-gray-100 animate-pulse rounded-lg shadow p-4 w-80 h-64"
-                >
-                  <div className="flex items-center mb-4">
-                    <div className="h-12 w-12 rounded-full bg-gray-300 mr-3" />
-                    <div className="flex flex-col space-y-2 w-2/3">
-                      <div className="h-3 bg-gray-300 rounded w-3/4" />
-                      <div className="h-3 bg-gray-300 rounded w-1/2" />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="h-3 bg-gray-300 rounded w-full" />
-                    <div className="h-3 bg-gray-300 rounded w-5/6" />
-                    <div className="h-3 bg-gray-300 rounded w-2/3" />
-                  </div>
-                </div>
-              ))}
+         <div className="w-full">
+  {/* Loading Spinner */}
+  {loading ? (
+    <div className="w-full flex flex-wrap justify-center gap-6">
+      {[...Array(limit)].map((_, i) => (
+        <div
+          key={i}
+          className="bg-gray-100 animate-pulse rounded-lg shadow p-4 w-80 h-64"
+        >
+          <div className="flex items-center mb-4">
+            <div className="h-12 w-12 rounded-full bg-gray-300 mr-3" />
+            <div className="flex flex-col space-y-2 w-2/3">
+              <div className="h-3 bg-gray-300 rounded w-3/4" />
+              <div className="h-3 bg-gray-300 rounded w-1/2" />
             </div>
-          ) : (
-            <>
-              {/* ================= GRID VIEW ================= */}
-              {viewType === "grid" && (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {all_feedback?.map((review) => (
-                    <div
+          </div>
+          <div className="space-y-2">
+            <div className="h-3 bg-gray-300 rounded w-full" />
+            <div className="h-3 bg-gray-300 rounded w-5/6" />
+            <div className="h-3 bg-gray-300 rounded w-2/3" />
+          </div>
+        </div>
+      ))}
+    </div>
+  ) : (
+    <>
+      {/* ================= GRID VIEW ================= */}
+      {viewType === "grid" && (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {all_feedback?.map((review) => (
+           <div
                       key={review._id}
                       className="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col"
                     >
@@ -393,77 +393,85 @@ export default function Feedback() {
                         Delete
                       </button>
                     </div>
-                  ))}
-                </div>
-              )}
+          ))}
+        </div>
+      )}
 
-              {/* ================= LIST VIEW ================= */}
-              {viewType === "list" && (
-                <div className="overflow-x-auto bg-white rounded-lg shadow">
-                  <table className="min-w-full">
-                    <thead className="bg-gray-100">
-                      <tr>
-                        <th className="px-4 py-3 text-left">Name</th>
-                        <th className="px-4 py-3 text-left">Company</th>
-                        <th className="px-4 py-3 text-left">Industry</th>
-                        <th className="px-4 py-3 text-left">Rating</th>
-                        <th className="px-4 py-3 text-left">Feedback</th>
-                        <th className="px-4 py-3 text-left">Status</th>
-                        <th className="px-4 py-3 text-left">Actions</th>
-                      </tr>
-                    </thead>
+      {/* ================= LIST VIEW ================= */}
+      {viewType === "list" && (
+        <div className="overflow-x-auto bg-white rounded-lg shadow">
+          <table className="min-w-full">
+            <thead className="bg-gray-100">
+              <tr>
+              <th className="px-4 py-3 text-left">Name</th>
+              <th className="px-4 py-3 text-left">Company</th>
+              <th className="px-4 py-3 text-left">Industry</th>
+              <th className="px-4 py-3 text-left">Rating</th>
+              <th className="px-4 py-3 text-left">Feedback</th>
+              <th className="px-4 py-3 text-left">Status</th>
+              <th className="px-4 py-3 text-left">Actions</th>
+              </tr>
+            </thead>
 
-                    <tbody>
-                      {all_feedback?.map((review) => (
-                        <tr
-                          key={review._id}
-                          className="border-t hover:bg-gray-50"
-                        >
-                          <td className="px-4 py-3">{review.full_name}</td>
-                          <td className="px-4 py-3">{review.company_name}</td>
-                          <td className="px-4 py-3 font-semibold text-blue-600">
-                            {review.industry}
-                          </td>
-                          <td className="px-4 py-3">
-                            {renderStars(review.rating)}
-                          </td>
-                          <td className="px-4 py-3">{review.feedback}</td>
+            <tbody>
+              {all_feedback?.map((review) => (
+                <tr
+                  key={review._id}
+                  className="border-t hover:bg-gray-50"
+                >
+                  <td className="px-4 py-3">{review.full_name}</td>
+             <td className="px-4 py-3">{review.company_name}</td>
+             <td className="px-4 py-3 font-semibold text-blue-600">
+               {review.industry}
+             </td>
+            <td className="px-4 py-3">{renderStars(review.rating)}</td>
+             <td className="px-4 py-3">{review.feedback}</td>
+<td className="px-4 py-3">
+  <button
+    onClick={() => toggleBlogStatus(review._id, !review.isApproved)}
+    className={`px-3 py-1 rounded-full text-xs font-medium transition
+      ${
+        review.isApproved
+          ? "bg-green-100 text-green-700"
+          : "bg-yellow-100 text-yellow-700"
+      }
+    `}
+  >
+    {review.isApproved ? "Approved" : "Pending"}
+  </button>
+</td>
 
-                          {/* ✅ STATUS TOGGLE (kept in list view) */}
-                          <td className="px-4 py-3">
-                            <label className="inline-flex items-center cursor-pointer">
-                              <input
-                                type="checkbox"
-                                className="sr-only peer"
-                                checked={review.isApproved}
-                                onChange={() =>
-                                  toggleBlogStatus(
-                                    review._id,
-                                    !review.isApproved
-                                  )
-                                }
-                              />
-                              <div className="w-10 h-5 bg-gray-200 rounded-full peer peer-checked:bg-green-600"></div>
-                            </label>
-                          </td>
 
-                          <td className="px-4 py-3">
-                            <button
-                              onClick={() => delete_blog(review._id)}
-                              className="bg-red-600 text-white px-3 py-1 rounded-md"
-                            >
-                              Delete
-                            </button>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              )}
-            </>
-          )}
-          {/* Pagination Controls */}
+                  <td className="px-4 py-3 flex gap-2">
+                    <button
+                      // onClick={() =>
+                      //   navigate("/view-profiles", {
+                      //     state: { id: profile._id },
+                      //   })
+                      // }
+                      className="border px-3 py-1 rounded-md"
+                    >
+                      Complete
+                    </button>
+
+                    <button
+                      onClick={() => delete_blog(review._id)}
+                      className="bg-red-600 text-white px-3 py-1 rounded-md"
+                    >
+                      Delete
+                    </button>
+                    
+                    
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </>
+  )}
+    {/* Pagination Controls */}
           {totalPages > 1 && (
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 mt-8">
               {/* Limit Dropdown */}
@@ -517,7 +525,7 @@ export default function Feedback() {
               </div>
             </div>
           )}
-        </div>
+</div>
 
         {/* Empty State */}
         {all_feedback?.length === 0 && (
@@ -534,3 +542,13 @@ export default function Feedback() {
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+

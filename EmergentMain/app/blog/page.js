@@ -1,12 +1,17 @@
 "use client"
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Calendar, ArrowRight, Mail } from "lucide-react";
 import { toast } from "sonner";
 import Header from "@/components/Header";
 import Chatbot from "@/components/Chatbot";
 import Footer from "@/components/Footer";
+import api from "@/components/api"
+import { useRouter } from "next/navigation";
 
 export const Blog = () => {
+
+  const router = useRouter();
+
   const [email, setEmail] = useState("");
   const [isSubscribing, setIsSubscribing] = useState(false);
 
@@ -22,29 +27,42 @@ export const Blog = () => {
     }, 1000);
   };
 
-  const blogPosts = [
-    {
-      title: "How AI Automation Reduces Operational Costs by 60-80%",
-      excerpt: "Discover the hidden inefficiencies costing your business thousands monthly and how intelligent automation eliminates them without disrupting operations.",
-      category: "Business",
-      date: "Dec 20, 2024",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
-    },
-    {
-      title: "Building Scalable Automation: Lessons from 100+ Implementations",
-      excerpt: "What separates automation that breaks under pressure from systems that amplify efficiency as you grow. Real insights from enterprise deployments.",
-      category: "AI Automation",
-      date: "Dec 15, 2024",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
-    },
-    {
-      title: "The Hidden Cost of Manual Workflows (And How to Calculate Yours)",
-      excerpt: "A framework for identifying invisible operational friction and quantifying the ROI of automation before you invest.",
-      category: "Productivity",
-      date: "Dec 10, 2024",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800",
-    },
-  ];
+
+
+  const [page, setPage] = useState(1);
+  const [limit, setlimit] = useState(6);
+
+   const [blogPosts, setblogPosts] = useState([]);
+
+  const get_all_blogs = async () => {
+    try {
+    
+      const resp = await api.get(
+        `api/blog/all-blogs?page=${page}&limit=${limit}`
+      );
+
+      setblogPosts(resp.data.Blog);
+      setTotal(resp.data.total);
+      setactive_profile(resp.data.active)
+    } catch (error) {
+      console.log(error);
+    } 
+  }
+
+console.log(blogPosts);
+
+  
+
+  useEffect(() => {
+    get_all_blogs();
+  }, [page, limit]);
+
+  const stripHtml = (html) => {
+  const div = document.createElement("div");
+  div.innerHTML = html;
+  return div.textContent || div.innerText || "";
+};
+
 
   return (
     <div>
@@ -101,7 +119,7 @@ export const Blog = () => {
             Latest Articles
           </h2>
           <div className="grid-3">
-            {blogPosts.map((post, index) => (
+            {blogPosts?.map((post, index) => (
               <article
                 key={index}
                 className="hover-lift"
@@ -122,21 +140,30 @@ export const Blog = () => {
                 </div>
                 <div style={{ padding: "24px" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "12px" }}>
-                    <span style={{ fontSize: "12px", fontWeight: 600, color: "#0066cc", textTransform: "uppercase" }}>
-                      {post.category}
-                    </span>
+             
                     <span style={{ fontSize: "13px", color: "#999999", display: "flex", alignItems: "center", gap: "6px" }}>
                       <Calendar size={14} />
-                      {post.date}
+                      {new Date(post.createdAt).toLocaleDateString("en-IN", {
+                        day: "2-digit",
+                        month: "short",
+                        year: "numeric",
+                      })}
                     </span>
                   </div>
                   <h3 style={{ fontSize: "20px", fontWeight: 600, marginBottom: "12px", color: "#1a1a1a", lineHeight: 1.4 }}>
                     {post.title}
                   </h3>
                   <p className="body-text" style={{ color: "#666666", marginBottom: "16px", fontSize: "15px" }}>
-                    {post.excerpt}
+                    {post.description}
                   </p>
-                  <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", color: "#0066cc", fontWeight: 500, fontSize: "14px" }}>
+                      <p
+                        className="text-gray-600 text-[15px] line-clamp-3"
+                      >
+                        {stripHtml(post.fullBlog)}
+                      </p>
+
+
+                  <div onClick={() => router.push(`/blog/${post._id}`)} style={{ display: "inline-flex", alignItems: "center", gap: "8px", color: "#0066cc", fontWeight: 500, fontSize: "14px" }}>
                     Read More
                     <ArrowRight size={16} />
                   </div>

@@ -112,3 +112,30 @@ exports.getBlogs = async (req, res) => {
     });
   }
 };
+
+exports.getBlogsById = async (req, res) => {
+  try {
+    const id  = req.params.id;
+
+    const blog = await Blog.findById(id);
+
+    if (!blog) {
+      return res.status(404).json({
+        message: "Blog not found",
+      });
+    }
+
+    res.status(200).json({
+      message: "Blog details found successfully",
+      blog,
+    });
+
+  } catch (error) {
+    console.error("Error getting Blog details:", error);
+    res.status(500).json({
+      message: "Error occurred while getting Blog details",
+      error: error.message,
+    });
+  }
+};
+

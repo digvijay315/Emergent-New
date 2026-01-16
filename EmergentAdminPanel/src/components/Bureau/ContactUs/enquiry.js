@@ -1,21 +1,18 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect,  useState } from "react";
 import {
   Plus,
   Search,
   Mail,
-  CheckCircle ,
   Building2,
   MessageSquareText,
   GraduationCap,
   Users,
-  Trash,
   Phone
 } from "lucide-react";
 import Header from "../Layout/Header";
 import Footer from "../Layout/Footer";
 import { useNavigate } from "react-router-dom";
 import api from "../../../api";
-import CircularProgress from "@mui/material/CircularProgress";
 import Swal from "sweetalert2";
 
 
@@ -133,53 +130,53 @@ export default function Enquiry() {
 //   }
 // };
 
-const toggle_user = async (id) => {
-  try {
-     const confirmUpdate = await Swal.fire({
-      title: "Are you sure?",
-      text: "This action will update the user profile!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonText: "Yes, update it!",
-      cancelButtonText: "Cancel",
-      reverseButtons: true,
-      customClass: {
-        confirmButton: "swal-confirm-btn",
-        cancelButton: "swal-confirm-btn",
-      },
-    });
+// const toggle_user = async (id) => {
+//   try {
+//      const confirmUpdate = await Swal.fire({
+//       title: "Are you sure?",
+//       text: "This action will update the user profile!",
+//       icon: "warning",
+//       showCancelButton: true,
+//       confirmButtonText: "Yes, update it!",
+//       cancelButtonText: "Cancel",
+//       reverseButtons: true,
+//       customClass: {
+//         confirmButton: "swal-confirm-btn",
+//         cancelButton: "swal-confirm-btn",
+//       },
+//     });
 
-    // If user cancels, stop here
-    if (!confirmUpdate.isConfirmed) return;
+//     // If user cancels, stop here
+//     if (!confirmUpdate.isConfirmed) return;
 
-    const res = await api.put(`api/user/block-unblock/${id}`);
-    if (res.status===200) {
-       await Swal.fire({
-        icon: "success",
-        title: "Profile Updated!",
-        text: res.data.message || "User profile updated successfully.",
-        confirmButtonText: "OK",
-        customClass: {
-          confirmButton: "swal-confirm-btn",
-        },
-      });
-      get_all_enquiry_details(); 
-    }
-  } catch (error) {
-    console.error(error);
-    Swal.fire({
-      icon: "error",
-      title: "Error!",
-      text:
-        error.response?.data?.error ||
-        "Something went wrong! Please try again.",
-      confirmButtonText: "OK",
-      customClass: {
-        confirmButton: "swal-confirm-btn",
-      },
-    });
-  }
-};
+//     const res = await api.put(`api/user/block-unblock/${id}`);
+//     if (res.status===200) {
+//        await Swal.fire({
+//         icon: "success",
+//         title: "Profile Updated!",
+//         text: res.data.message || "User profile updated successfully.",
+//         confirmButtonText: "OK",
+//         customClass: {
+//           confirmButton: "swal-confirm-btn",
+//         },
+//       });
+//       get_all_enquiry_details(); 
+//     }
+//   } catch (error) {
+//     console.error(error);
+//     Swal.fire({
+//       icon: "error",
+//       title: "Error!",
+//       text:
+//         error.response?.data?.error ||
+//         "Something went wrong! Please try again.",
+//       confirmButtonText: "OK",
+//       customClass: {
+//         confirmButton: "swal-confirm-btn",
+//       },
+//     });
+//   }
+// };
 
 
 const [exportLoading, setExportLoading] = useState(false);
@@ -223,64 +220,64 @@ const exportUserProfiles = async () => {
   }
 };
 
-const fileInputRef = useRef(null);
+// const fileInputRef = useRef(null);
 
-const [loading_import, setloading_import] = useState(false);
+// const [loading_import, setloading_import] = useState(false);
 
- const importFromExcel = async (file) => {
-    if (!file) return;
+//  const importFromExcel = async (file) => {
+//     if (!file) return;
 
-    const formData = new FormData();
-    formData.append("file", file);
+//     const formData = new FormData();
+//     formData.append("file", file);
 
-    try {
-      setloading_import(true);
-      const response = await api.post("/api/user/bulk-upload", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+//     try {
+//       setloading_import(true);
+//       const response = await api.post("/api/user/bulk-upload", formData, {
+//         headers: {
+//           "Content-Type": "multipart/form-data",
+//         },
+//       });
 
-       Swal.fire({
-        icon: "success",
-        title: "Data Imported!",
-        text:  "Data uploaded successfully!",
-        confirmButtonText: "OK",
-        customClass: {
-          confirmButton: "swal-confirm-btn",
-        },
-      }).then(()=>
-      {
-        window.location.reload()
-      });
-    } catch (error) {
-      console.error("Upload failed:", error);
-      alert("Upload failed");
-       Swal.fire({
-        icon: "error",
-        title: "Failed!",
-        text:  "Data Upload failed!",
-        confirmButtonText: "OK",
-        customClass: {
-          confirmButton: "swal-confirm-btn",
-        },
-      }).then(()=>
-      {
-        window.location.reload()
-      });
-    } finally {
-      setloading_import(false);
-    }
-  };
+//        Swal.fire({
+//         icon: "success",
+//         title: "Data Imported!",
+//         text:  "Data uploaded successfully!",
+//         confirmButtonText: "OK",
+//         customClass: {
+//           confirmButton: "swal-confirm-btn",
+//         },
+//       }).then(()=>
+//       {
+//         window.location.reload()
+//       });
+//     } catch (error) {
+//       console.error("Upload failed:", error);
+//       alert("Upload failed");
+//        Swal.fire({
+//         icon: "error",
+//         title: "Failed!",
+//         text:  "Data Upload failed!",
+//         confirmButtonText: "OK",
+//         customClass: {
+//           confirmButton: "swal-confirm-btn",
+//         },
+//       }).then(()=>
+//       {
+//         window.location.reload()
+//       });
+//     } finally {
+//       setloading_import(false);
+//     }
+//   };
 
-  const handleButtonClick = () => {
-    fileInputRef.current.click();
-  };
+  // const handleButtonClick = () => {
+  //   fileInputRef.current.click();
+  // };
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    importFromExcel(file);
-  };
+  // const handleFileChange = (e) => {
+  //   const file = e.target.files[0];
+  //   importFromExcel(file);
+  // };
 
     // delete profile
 

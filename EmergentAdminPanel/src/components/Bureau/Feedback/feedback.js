@@ -1,23 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect,  useState } from "react";
 import {
-  Plus,
+
   Search,
-  Mail,
-  CheckCircle ,
-  Eye,
-  Calendar,
-  Clock,
-  StickyNote,
-  Briefcase,
-  GraduationCap,
   Users,
   Trash,
-  Phone,
-  Edit
 } from "lucide-react";
 import Header from "../Layout/Header";
 import Footer from "../Layout/Footer";
-import { useNavigate } from "react-router-dom";
+
 import api from "../../../api";
 import Swal from "sweetalert2";
 
@@ -26,9 +16,8 @@ import Swal from "sweetalert2";
 
 
 export default function Feedback() {
-  const navigate = useNavigate();
 
-  const user = JSON.parse(localStorage.getItem("user"));
+
 
   const [searchTerm, setSearchTerm] = useState("");
   // const [genderFilter, setGenderFilter] = useState("all");
@@ -146,14 +135,7 @@ console.log(resp);
     }
   };
 
- const [open, setOpen] = useState(false);
- const [editData, setEditData] = useState(null);
 
- const openEditModal=(blog)=>
- {
-  setOpen(true)
-  setEditData(blog)
- }
 
 const toggleBlogStatus = async (id, currentStatus) => {
   try {

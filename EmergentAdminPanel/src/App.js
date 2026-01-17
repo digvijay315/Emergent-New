@@ -13,6 +13,7 @@ import Blog from "./components/Bureau/Blog/blog";
 import GaReport from "./components/Bureau/Report/ga";
 import AdminSettings from "./components/Bureau/Settings/settings";
 import Feedback from "./components/Bureau/Feedback/feedback";
+import Chatbot from "./components/Bureau/Chatbot/chatbot";
 
 
 
@@ -36,6 +37,7 @@ function App() {
         <Route path="/report" element={<GaReport/>}></Route>
         <Route path="/settings" element={<AdminSettings/>}></Route>
         <Route path="/feedback" element={<Feedback/>}></Route>
+        <Route path="/chatbot-faq" element={<Chatbot/>}></Route>
     
         {/* </Route> */}
       </Routes>

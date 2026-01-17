@@ -48,6 +48,7 @@ app.use("/api/appointment", require("./routes/book_appointment"));
 app.use("/api/blog", require("./routes/blog"));
 app.use("/api/ga", require("./routes/ga"));
 app.use("/api/feedback", require("./routes/feedback"));
+app.use("/api/chatbot", require("./routes/chatbot"));
 
 /* ---------- SERVER ---------- */
 const server = app.listen(process.env.PORT, () => {

@@ -166,9 +166,9 @@ const AdminSettings = () => {
 
       {/* Quick Actions */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-        <button onClick={()=>navigate('/blog')} className="w-full h-24 flex flex-col justify-center items-center bg-blue-50 text-blue-600 rounded-xl border border-blue-200 hover:bg-blue-100 transition">
+        <button onClick={()=>navigate('/chatbot-faq')} className="w-full h-24 flex flex-col justify-center items-center bg-blue-50 text-blue-600 rounded-xl border border-blue-200 hover:bg-blue-100 transition">
           <Plus className="h-6 w-6 mb-2" />
-          Add Chat-Bot
+          Chat-Bot
         </button>
         <button onClick={()=>navigate('/booking-appointment-details')} className="w-full h-24 flex flex-col justify-center items-center bg-red-50 text-red-600 rounded-xl border border-red-200 hover:bg-red-100 transition">
          <Eye className="h-6 w-6 mb-2" />

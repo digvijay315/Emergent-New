@@ -15,6 +15,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
 import CookieConsent from "@/components/CookieConsent";
+import ScrollIndicator from "@/components/scroll_indicator";
 
 export const Home = () => {
   const problems = [
@@ -103,8 +104,10 @@ export const Home = () => {
   return (
     <div>
       <Header/>
+      <ScrollIndicator/>
       {/* Hero Section */}
       <section
+      id="hero"
         style={{
           minHeight: "100vh",
           display: "flex",
@@ -168,7 +171,7 @@ export const Home = () => {
       </section>
 
       {/* Problems Section */}
-      <section className="section-spacing" style={{ backgroundColor: "#fafafa" }}>
+      <section id="problems"  className="section-spacing" style={{ backgroundColor: "#fafafa" }}>
         <div className="container">
           <h2 className="section-header" style={{ textAlign: "center" }}>
             Hidden Problems Holding You Back
@@ -204,7 +207,7 @@ export const Home = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="section-spacing">
+      <section id="benefits" className="section-spacing">
         <div className="container">
           <h2 className="section-header" style={{ textAlign: "center" }}>
             The Power of AI Automation
@@ -253,7 +256,7 @@ export const Home = () => {
       </section>
 
       {/* Why IntelliviaAI */}
-      <section className="section-spacing" style={{ backgroundColor: "#fafafa" }}>
+      <section id="whyUs" className="section-spacing" style={{ backgroundColor: "#fafafa" }}>
         <div className="container">
           <h2 className="section-header" style={{ textAlign: "center" }}>
             Why IntelliviaAI
@@ -377,7 +380,7 @@ export const Home = () => {
       </section>
 
       {/* Partner Ecosystem */}
-      <section className="section-spacing">
+      <section id="partners" className="section-spacing">
         <div className="container">
           <div style={{ textAlign: "center", marginBottom: "64px" }}>
             <h2 className="section-header" style={{ marginBottom: "16px" }}>
@@ -464,7 +467,7 @@ export const Home = () => {
       </section>
 
       {/* Inspirational Quote */}
-      <section className="section-spacing" style={{ backgroundColor: "#fafafa" }}>
+      <section id="quots" className="section-spacing" style={{ backgroundColor: "#fafafa" }}>
         <div className="container">
           <div
             style={{
@@ -501,7 +504,7 @@ export const Home = () => {
       </section>
 
       {/* Case Studies - Placeholders */}
-      <section className="section-spacing">
+      <section id="case" className="section-spacing">
         <div className="container">
           <div style={{ textAlign: "center", marginBottom: "64px" }}>
             <h2 className="section-header" style={{ marginBottom: "16px" }}>
@@ -642,7 +645,7 @@ export const Home = () => {
       </section>
 
       {/* Feedback / Reviews */}
-      <section className="section-spacing" style={{ backgroundColor: "#fafafa" }}>
+      <section id="testimonials" className="section-spacing" style={{ backgroundColor: "#fafafa" }}>
         <div className="container">
           <div style={{ textAlign: "center", marginBottom: "64px" }}>
             <h2 className="section-header" style={{ marginBottom: "16px" }}>
@@ -787,7 +790,7 @@ export const Home = () => {
       </section>
 
       {/* How It Works */}
-      <section className="section-spacing" style={{ backgroundColor: "#fafafa" }}>
+      <section id="howItWorks" className="section-spacing" style={{ backgroundColor: "#fafafa" }}>
         <div className="container">
           <h2 className="section-header" style={{ textAlign: "center" }}>
             How It Works
@@ -863,7 +866,7 @@ export const Home = () => {
       />
 
       {/* CTA Section */}
-      <section className="section-spacing">
+      <section id="cta" className="section-spacing">
         <div
           className="container"
           style={{

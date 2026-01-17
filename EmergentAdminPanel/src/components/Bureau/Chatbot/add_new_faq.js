@@ -94,7 +94,7 @@ const handleSubmit = async () => {
       icon: "success",
       title: "Success",
       text: editData
-        ? "Faw updated successfully"
+        ? "Faq updated successfully"
         : "Faq added successfully",
       timer: 2000,
       showConfirmButton: true,

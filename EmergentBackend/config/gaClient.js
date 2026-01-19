@@ -1,5 +1,5 @@
-const { BetaAnalyticsDataClient } = require("@google-analytics/data");
-require("dotenv").config();
+// const { BetaAnalyticsDataClient } = require("@google-analytics/data");
+// require("dotenv").config();
 
 // const credentials = JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
 

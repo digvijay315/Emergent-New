@@ -1,12 +1,20 @@
 const { BetaAnalyticsDataClient } = require("@google-analytics/data");
 require("dotenv").config();
 
-const credentials = JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
+// const credentials = JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
 
-const analyticsClient = new BetaAnalyticsDataClient({ credentials });
+// const analyticsClient = new BetaAnalyticsDataClient({ credentials });
+
+// module.exports = analyticsClient;
+
+
+const { BetaAnalyticsDataClient } = require("@google-analytics/data");
+
+const analyticsClient = new BetaAnalyticsDataClient({
+  keyFilename: "ga-service-account.json",
+});
 
 module.exports = analyticsClient;
-
 
 // const { BetaAnalyticsDataClient } = require("@google-analytics/data");
 // const path = require("path");

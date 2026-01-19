@@ -104,7 +104,7 @@ export const Home = () => {
   return (
     <div>
       <Header/>
-      <ScrollIndicator/>
+      <ScrollIndicator className="scroll-indicator"/>
       {/* Hero Section */}
       <section
       id="hero"
@@ -899,7 +899,7 @@ export const Home = () => {
             drive growth.
           </p>
           <Link
-            href="/contact"
+            href="/contactus"
             className="btn-secondary"
             style={{
               display: "inline-flex",

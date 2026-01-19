@@ -17,7 +17,7 @@ const SECTIONS = [
 const formatName = (id) =>
   id.replace(/([A-Z])/g, " $1").replace(/^./, (c) => c.toUpperCase());
 
-export default function ScrollIndicator() {
+export default function ScrollIndicator({ className }) {
   const [active, setActive] = useState("hero");
   const [hovered, setHovered] = useState(null);
 
@@ -46,7 +46,7 @@ export default function ScrollIndicator() {
   };
 
   return (
-    <div
+    <div className="scroll-indicator"
       style={{
         position: "fixed",
         right: "24px",

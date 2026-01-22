@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import Quill from "quill";
 import api from '../../../api'
 import Swal from "sweetalert2";
 
@@ -150,6 +151,61 @@ const handleSubmit = async () => {
   }
 };
 
+const Font = Quill.import("formats/font");
+Font.whitelist = ["sans-serif", "serif", "monospace","times-new-roman"];
+Quill.register(Font, true);
+
+// Size whitelist
+const Size = Quill.import("formats/size");
+Size.whitelist = ["small", false, "large", "huge"];
+Quill.register(Size, true);
+
+const modules = {
+  toolbar: [
+    [{ font: [] }],
+    [{ size: ["small", false, "large", "huge"] }],
+
+    ["bold", "italic", "underline", "strike"],
+
+    [{ color: [] }, { background: [] }],
+
+    [{ script: "sub" }, { script: "super" }],
+
+    [{ header: 1 }, { header: 2 }, "blockquote", "code-block"],
+
+    [{ list: "ordered" }, { list: "bullet" }],
+    [{ indent: "-1" }, { indent: "+1" }],
+
+    [{ direction: "rtl" }, { align: [] }],
+
+    ["link", "image", "video"],
+
+    ["clean"],
+  ],
+};
+
+const formats = [
+  "font",
+  "size",
+  "bold",
+  "italic",
+  "underline",
+  "strike",
+  "color",
+  "background",
+  "script",
+  "header",
+  "blockquote",
+  "code-block",
+  "list",
+  "bullet",
+  "indent",
+  "direction",
+  "align",
+  "link",
+  "image",
+  "video",
+];
 
   return (
     <Modal open={open} onClose={handleClose}>
@@ -221,6 +277,8 @@ const handleSubmit = async () => {
           onChange={(value) =>
             setBlog({ ...blog, fullBlog: value })
           }
+          modules={modules}
+          formats={formats}
           style={{ height: "200px", marginBottom: "40px" }}
         />
 

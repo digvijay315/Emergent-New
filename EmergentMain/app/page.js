@@ -16,6 +16,7 @@ import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
 import CookieConsent from "@/components/CookieConsent";
 import ScrollIndicator from "@/components/scroll_indicator";
+import { motion } from "framer-motion";
 
 export const Home = () => {
   const problems = [
@@ -100,6 +101,19 @@ export const Home = () => {
         "Ongoing optimization and support to ensure peak performance and reliability.",
     },
   ];
+
+    const partners = [
+    { name: "AWS", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
+    { name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
+    { name: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" },
+    { name: "OpenAI", logo: "https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" },
+    { name: "Meta", logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" },
+    { name: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" },
+    { name: "Zapier", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRy-fLVsR0r7voh3ihZ68GLOIsuCKLwqwZGg&s" },
+    { name: "Make.com", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpad3kQ9jxPrEfSkgdXDDi7Jk9792oTshEDA&s" },
+    { name: "n8n", logo: "https://upload.wikimedia.org/wikipedia/commons/5/53/N8n-logo-new.svg" },
+  ];
+
 
   return (
     <div>
@@ -380,91 +394,94 @@ export const Home = () => {
       </section>
 
       {/* Partner Ecosystem */}
-      <section id="partners" className="section-spacing">
-        <div className="container">
-          <div style={{ textAlign: "center", marginBottom: "64px" }}>
-            <h2 className="section-header" style={{ marginBottom: "16px" }}>
-              Technologies We Work With
-            </h2>
-            <p className="body-text-large" style={{ color: "#666666" }}>
-              Partnering with leading platforms to build robust automation solutions
-            </p>
-          </div>
-        <div
-  style={{
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
-    gap: "48px",
-    maxWidth: "1200px",
-    margin: "0 auto",
-    alignItems: "center",
-  }}
->
-  {[
-    { name: "AWS", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
-    { name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
-    { name: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" },
-    { name: "OpenAI", logo: "https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" },
-    { name: "Meta", logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" },
-    { name: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" },
-  ].map((partner, index) => (
-    <div
-      key={index}
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "24px",
-        backgroundColor: "#FFFFFF",
-        border: "1px solid #e5e5e5",
-        borderRadius: "4px",
-        transition: "all 0.3s ease",
-        minHeight: "120px",
-      }}
-      className="partner-logo"
-      onMouseEnter={(e) => {
-        e.currentTarget.style.borderColor = "#0066cc";
-        e.currentTarget.style.boxShadow = "0 4px 12px rgba(0, 102, 204, 0.1)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.borderColor = "#e5e5e5";
-        e.currentTarget.style.boxShadow = "none";
-      }}
-    >
-      <img
-        src={partner.logo}
-        alt={partner.name}
-        style={{ maxWidth: "100px", maxHeight: "50px", marginBottom: "12px" }}
-      />
-      <span
-        style={{
-          fontSize: "16px",
-          fontWeight: 600,
-          color: "#1a1a1a",
-        }}
-      >
-        {partner.name}
-      </span>
-    </div>
-  ))}
-</div>
+    <section id="partners" className="section-spacing">
+      <div className="container">
+        {/* Header */}
+        <div style={{ textAlign: "center", marginBottom: "64px" }}>
+          <h2 className="section-header" style={{ marginBottom: "16px" }}>
+            Technologies We Work With
+          </h2>
+          <p className="body-text-large" style={{ color: "#666666" }}>
+            Partnering with leading platforms to build robust automation solutions
+          </p>
+        </div>
 
-          <div
+        {/* Marquee Wrapper */}
+        <div style={{ overflow: "hidden", width: "100%" }}>
+          <motion.div
             style={{
-              marginTop: "48px",
-              textAlign: "center",
+              display: "flex",
+              gap: "48px",
+              width: "max-content",
+              alignItems: "center",
+            }}
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              repeat: Infinity,
+              duration: 25,
+              ease: "linear",
             }}
           >
-            <p
-              className="body-text"
-              style={{ color: "#999999", fontSize: "14px", margin: 0 }}
-            >
-              Technologies and platforms we integrate to build custom automation solutions
-            </p>
-          </div>
+            {[...partners, ...partners].map((partner, index) => (
+              <div
+                key={index}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "24px",
+                  backgroundColor: "#FFFFFF",
+                  border: "1px solid #e5e5e5",
+                  borderRadius: "4px",
+                  transition: "all 0.3s ease",
+                  minHeight: "120px",
+                  minWidth: "160px",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = "#0066cc";
+                  e.currentTarget.style.boxShadow =
+                    "0 4px 12px rgba(0, 102, 204, 0.1)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "#e5e5e5";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  style={{
+                    maxWidth: "100px",
+                    maxHeight: "50px",
+                    marginBottom: "12px",
+                  }}
+                />
+                <span
+                  style={{
+                    fontSize: "16px",
+                    fontWeight: 600,
+                    color: "#1a1a1a",
+                  }}
+                >
+                  {partner.name}
+                </span>
+              </div>
+            ))}
+          </motion.div>
         </div>
-      </section>
+
+        {/* Footer Text */}
+        <div style={{ marginTop: "48px", textAlign: "center" }}>
+          <p
+            className="body-text"
+            style={{ color: "#999999", fontSize: "14px", margin: 0 }}
+          >
+            Technologies and platforms we integrate to build custom automation solutions
+          </p>
+        </div>
+      </div>
+    </section>
 
       {/* Inspirational Quote */}
       <section id="quots" className="section-spacing" style={{ backgroundColor: "#fafafa" }}>

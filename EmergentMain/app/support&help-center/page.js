@@ -2,9 +2,41 @@
 import Chatbot from "@/components/Chatbot";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import React from "react";
+import React, { useState } from "react";
 
 export const SupportHelpCenter = () => {
+
+  const faqs = [
+  {
+    q: "What is AI automation?",
+    a: "AI automation uses intelligent agents to automate repetitive, manual business tasks freeing up time, reducing errors, and improving operational efficiency."
+  },
+  {
+    q: "How quickly can automation be implemented?",
+    a: "Implementation timelines vary by workflow complexity, but typical deployment ranges from a few days to several weeks."
+  },
+  {
+    q: "Is AI automation suitable for my business size?",
+    a: "Yes, solutions are scalable for startups, SMEs, and enterprises."
+  },
+  {
+    q: "Where does my data live?",
+    a: "Your data stays completely under your control, hosted on your infrastructure or systems."
+  },
+  {
+    q: "Can I automate only specific processes?",
+    a: "Absolutely, automation can be tailored to specific parts of your operations."
+  }
+];
+
+
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+
   return (
     <div>
         <Header/>
@@ -68,7 +100,7 @@ your automation journey, our Support Team is here to assist you every step of th
       color: "#1a1a1a",
     }}
   >
-    � Get Help - Contact Support
+    Get Help - Contact Support
   </h2>
 
   <p className="body-text" style={{ color: "#666666", marginBottom: "16px" }}>
@@ -77,19 +109,19 @@ your automation journey, our Support Team is here to assist you every step of th
 
 
 <h3>
-      � Email Support:
+      Email Support:
       </h3>
       <p>support@intelliviaai.com (Response within 24 business hours)
 </p>
 
 <h3>
-      � Phone Support:
+      Phone Support:
       </h3>
       <p>+44 7734862101 (Available Mon–Fri, 9 AM–5 PM UTC)
 </p>
 
 <h3>
-     � Live Chat:
+     Live Chat:
       </h3>
       <p>Available on this site (click the Chat icon in the bottom-right corner)
 </p>
@@ -100,59 +132,47 @@ your automation journey, our Support Team is here to assist you every step of th
 
             {/*question */}
 
-         <div style={{ marginBottom: "48px" }}>
-  <h2
-    style={{
-      fontSize: "28px",
-      fontWeight: 600,
-      marginBottom: "16px",
-      color: "#1a1a1a",
-    }}
-  >
-    ❓ Frequently Asked Questions (FAQs)
-  </h2>
+ <div style={{ marginBottom: "48px" }}>
+      <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px", color: "#1a1a1a" }}>
+        Frequently Asked Questions (FAQs)
+      </h2>
 
-  <p className="body-text" style={{ color: "#343333", marginBottom: "12px",fontWeight:"bold" }}>
-    General Support Topics
-  </p>
+      <p style={{ color: "#343333", marginBottom: "12px", fontWeight: "bold" }}>
+        General Support Topics
+      </p>
 
-<h3>
-      Q: What is AI automation?
-      </h3>
-      <p>A: AI automation uses intelligent agents to automate repetitive, manual business tasks freeing
-up time, reducing errors, and improving operational efficiency.
-</p>
+      {faqs.map((item, index) => (
+        <div key={index} style={{ borderBottom: "1px solid #ddd", padding: "12px 0" }}>
+          
+          {/* Question */}
+          <div
+            onClick={() => toggleFAQ(index)}
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              cursor: "pointer"
+            }}
+          >
+            <h3 style={{ margin: 0 }}>{item.q}</h3>
+            <span style={{ fontSize: "22px", fontWeight: "bold" }}>
+              {openIndex === index ? "−" : "+"}
+            </span>
+          </div>
 
-<h3>
-      Q: How quickly can automation be implemented?
-      </h3>
-      <p>A: Implementation timelines vary by workflow complexity, but typical deployment ranges from a
-few days to several weeks.
-</p>
+          {/* Answer */}
+          {openIndex === index && (
+            <p style={{ marginTop: "8px", color: "#444" }}>
+              {item.a}
+            </p>
+          )}
+        </div>
+      ))}
 
-<h3>
-      Q: Is AI automation suitable for my business size?
-      </h3>
-      <p>A: Yes, solutions are scalable for startups, SMEs, and enterprises.
-</p>
-
-<h3>
-      Q: Where does my data live?
-      </h3>
-      <p>A: Your data stays completely under your control, hosted on your infrastructure or systems.
-</p>
- 
- <h3>
-      Q: Can I automate only specific processes?
-      </h3>
-      <p>A: Absolutely, automation can be tailored to specific parts of your operations.
-</p>
-
-      <p>(You can expand FAQ answers with analytics tools, reporting questions, integrations, etc.)
-</p>
-
-
-</div>
+      <p style={{ marginTop: "16px", color: "#666" }}>
+        (You can expand FAQ answers with analytics tools, reporting questions, integrations, etc.)
+      </p>
+    </div>
 
 
             {/*  � Technical Support*/}
@@ -166,7 +186,7 @@ few days to several weeks.
       color: "#1a1a1a",
     }}
   >
-    � Technical Support
+    Technical Support
   </h2>
 
   <p className="body-text" style={{ color: "#666666", marginBottom: "12px" }}>
@@ -221,7 +241,7 @@ few days to several weeks.
       color: "#1a1a1a",
     }}
   >
-    � Knowledge Base & Documentation (Coming Soon)
+    Knowledge Base & Documentation (Coming Soon)
   </h2>
 
   <p className="body-text" style={{ color: "#666666", marginBottom: "16px" }}>
@@ -262,7 +282,7 @@ few days to several weeks.
       color: "#1a1a1a",
     }}
   >
-    � Book a Live Consultation
+    Book a Live Consultation
   </h2>
 
   <p className="body-text" style={{ color: "#666666", marginBottom: "16px" }}>
@@ -270,7 +290,7 @@ few days to several weeks.
   </p>
 
   <p className="body-text" style={{ color: "#666666" }}>
-    � <span style={{fontWeight:"bold",fontSize:"18px"}}>Book a Support Consultation</span> on our Book Appointment page.
+    <span style={{fontWeight:"bold",fontSize:"18px"}}>Book a Support Consultation</span> on our Book Appointment page.
   </p>
 </div>
 
@@ -286,7 +306,7 @@ few days to several weeks.
       color: "#1a1a1a",
     }}
   >
-    � Community & Feedback
+    Community & Feedback
   </h2>
 
   <p className="body-text" style={{ color: "#666666", marginBottom: "16px" }}>
@@ -323,7 +343,7 @@ few days to several weeks.
       
     }}
   >
-    � Support Hours
+     Support Hours
   </h2>
    <table
     style={{
@@ -407,7 +427,7 @@ support@intelliviaai.com with “URGENT ‼️” in the subject.
       color: "#1a1a1a",
     }}
   >
-    � Support Policies
+    Support Policies
   </h2>
 <h3>Response Time</h3>
 

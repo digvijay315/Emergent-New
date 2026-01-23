@@ -87,7 +87,7 @@ your automation journey, our Support Team is here to assist you every step of th
          <div
   style={{
     marginBottom: "48px",
-    backgroundColor: "#fff6a5", // ✅ light yellow background
+    backgroundColor: "#fff9e6", // ✅ light yellow background
     padding: "24px",
     borderRadius: "6px",
   }}
@@ -332,7 +332,7 @@ your automation journey, our Support Team is here to assist you every step of th
 </div>
 
             {/* Contact Information */}
- <div style={{ marginBottom: "48px",backgroundColor:"#fff6a5",padding: "24px"}}>
+ <div style={{ marginBottom: "48px",backgroundColor:"#fff9e6",padding: "24px"}}>
   <h2
     style={{
       fontSize: "28px",

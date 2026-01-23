@@ -19,7 +19,7 @@ export const Terms = () => {
       >
         <div className="container" style={{ textAlign: "center" }}>
           <h1 className="hero-headline" style={{ marginBottom: "24px" }}>
-            TERMS & CONDITIONS – INTELLIVIAAI LTD
+            TERMS & CONDITIONS
           </h1>
           <p
             className="body-text-large"
@@ -178,7 +178,7 @@ result in suspension or termination of Services.
   <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
     11. Third-Party Disclaimer
   </h2>
-   <h3 style={{ fontSize: "24px", fontWeight: 600, marginBottom: "16px",display:"inline-block",backgroundColor:"#fff6a5" }}>
+   <h3 style={{ fontSize: "24px", fontWeight: 600, marginBottom: "16px",display:"inline-block",backgroundColor:"#fff9e6" }}>
     Important: Third-Party AI Tool Usage
   </h3><br></br>
 
@@ -401,7 +401,7 @@ jurisdiction. Parties will attempt good-faith resolution before litigation.
 
 
             {/* Contact Information */}
-       <div style={{ marginBottom: "48px",backgroundColor:"#fff6a5",padding:"24px" }}>
+       <div style={{ marginBottom: "48px",backgroundColor:"#fff9e6",padding:"24px" }}>
               <h2
                 style={{
                   fontSize: "24px",
@@ -428,7 +428,7 @@ jurisdiction. Parties will attempt good-faith resolution before litigation.
               <p className="body-text" style={{ color: "#666666", margin: 1,display:"inline-block", }}>
          
              
-                  +44 07858 350634
+                  +44 7734862101
               
               </p>
             </div>

@@ -146,27 +146,29 @@ console.log(ANSWERS);
 
       {/* Chat Window */}
       {isOpen && (
-        <div
-          style={{
-            position: "fixed",
-            bottom: "24px",
-            right: "24px",
-            width: "380px",
-            height: "600px",
-            backgroundColor: "#FFFFFF",
-            borderRadius: "12px",
-            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.12)",
-            display: "flex",
-            flexDirection: "column",
-            zIndex: 9999,
-            overflow: "hidden",
-          }}
-          className="chatbot-window"
-        >
+ <div
+  style={{
+    position: "fixed",
+    bottom: "24px",
+    right: "24px",
+    width: "380px",
+    height: "calc(100vh - 48px)",
+    maxHeight: "600px",
+    backgroundColor: "#FFFFFF",
+    borderRadius: "12px",
+    boxShadow: "0 8px 32px rgba(0, 0, 0, 0.12)",
+    display: "flex",
+    flexDirection: "column",
+    zIndex: 9999,
+    overflow: "hidden",
+  }}
+  className="chatbot-window"
+>
+
           {/* Header */}
           <div
             style={{
-              marginTop: "60px",
+              // marginTop: "60px",
               padding: "20px",
               backgroundColor: "#0066cc",
               color: "#FFFFFF",

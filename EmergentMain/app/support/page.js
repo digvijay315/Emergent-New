@@ -31,7 +31,28 @@ export const Support = () => {
             Last Updated: January 2026<br></br>
             Website: www.intelliviaai.com
           </p>
-          <p
+      
+        </div>
+      </section>
+
+      {/* Privacy Content */}
+      <section className="section-spacing" style={{ backgroundColor: "#fafafa" }}>
+
+        
+        <div className="container">
+          
+          <div
+            style={{
+              maxWidth: "900px",
+              margin: "0 auto",
+              backgroundColor: "#FFFFFF",
+              padding: "64px",
+              borderRadius: "4px",
+              border: "1px solid #e5e5e5",
+            }}
+            className="privacy-content"
+          >
+                <p
             className="body-text-large"
             style={{
               maxWidth: "900px",
@@ -53,23 +74,6 @@ your AI automations run smoothly and deliver consistent value to your business.
 This Support Policy explains how our support works, what’s included, and what to expect when
 you contact us.
           </p>
-        </div>
-      </section>
-
-      {/* Privacy Content */}
-      <section className="section-spacing" style={{ backgroundColor: "#fafafa" }}>
-        <div className="container">
-          <div
-            style={{
-              maxWidth: "900px",
-              margin: "0 auto",
-              backgroundColor: "#FFFFFF",
-              padding: "64px",
-              borderRadius: "4px",
-              border: "1px solid #e5e5e5",
-            }}
-            className="privacy-content"
-          >
             {/* Scope of Support */}
           <div style={{ marginBottom: "48px" }}>
   <h2

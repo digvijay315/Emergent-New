@@ -245,7 +245,7 @@ const countryCodes = [
                 style={{
                   marginTop: "48px",
                   padding: "24px",
-                  backgroundColor: "#FFFFFF",
+                  backgroundColor: "#fff9e6",
                   borderRadius: "4px",
                   border: "1px solid #e5e5e5",
                 }}

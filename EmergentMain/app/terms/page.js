@@ -135,7 +135,7 @@ technical and do not constitute legal, financial, or regulatory advice.
   </h2>
 
   <p className="body-text" style={{ color: "#666666" }}>
-Unless otherwise agreed, all automation systems are built on client■owned infrastructure and accounts.
+Unless otherwise agreed, all automation systems are built on client owned infrastructure and accounts.
 IntelliviaAI acts as an independent contractor and does not form a partnership, agency, or employment
 relationship.
   </p>

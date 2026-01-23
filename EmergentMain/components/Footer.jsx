@@ -244,19 +244,7 @@ export const Footer = () => {
               >
                 About
               </Link>
-              <Link
-                href="/support"
-                style={{
-                  fontSize: "14px",
-                  color: "#a0a0a0",
-                  textDecoration: "none",
-                  transition: "color 0.2s ease",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#FFFFFF")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "#a0a0a0")}
-              >
-                Support Policy
-              </Link>
+
                 <Link
                 href="/support&help-center"
                 style={{
@@ -305,6 +293,7 @@ export const Footer = () => {
           style={{
             borderTop: "1px solid #333333",
             paddingTop: "32px",
+            paddingRight:"40px"
           }}
         >
           {/* Trust Statement */}
@@ -349,7 +338,7 @@ export const Footer = () => {
                 margin: 0,
               }}
             >
-              © {currentYear} IntelliviaAI. All rights reserved.
+              © {currentYear} IntelliviaAI Ltd. All rights reserved.
             </p>
             <div style={{ display: "flex", gap: "24px" }}>
               <Link
@@ -377,6 +366,19 @@ export const Footer = () => {
                 onMouseLeave={(e) => (e.currentTarget.style.color = "#666666")}
               >
                 Terms of Service
+              </Link>
+                            <Link
+                href="/support"
+                style={{
+                  fontSize: "14px",
+                  color: "#666666",
+                  textDecoration: "none",
+                  transition: "color 0.2s ease",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#FFFFFF")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#a0a0a0")}
+              >
+                Support Policy
               </Link>
             </div>
           </div>

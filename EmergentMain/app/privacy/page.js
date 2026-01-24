@@ -578,11 +578,12 @@ systems uses client API keys.</li>
             {/* Contact Information */}
           <div
   style={{
-    padding: "0px",
+    padding: "8px 0px",
     backgroundColor:"#fff9e6",
     borderRadius: "4px",
     border: "1px solid #e5e5e5",
     color:"#1a1a1a",
+    border: "1px solid #ffd966",
   
   }}
 >

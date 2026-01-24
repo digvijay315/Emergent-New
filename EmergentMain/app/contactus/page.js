@@ -247,7 +247,7 @@ const countryCodes = [
                   padding: "24px",
                   backgroundColor: "#fff9e6",
                   borderRadius: "4px",
-                  border: "1px solid #e5e5e5",
+                  border: "1px solid #ffd966",
                 }}
               >
                 <p

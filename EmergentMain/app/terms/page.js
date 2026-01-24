@@ -178,7 +178,7 @@ result in suspension or termination of Services.
   <h2 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "16px" }}>
     11. Third-Party Disclaimer
   </h2>
-   <h3 style={{ fontSize: "24px", fontWeight: 600, marginBottom: "16px",display:"inline-block",backgroundColor:"#fff9e6" }}>
+   <h3 style={{ fontSize: "24px", fontWeight: 600, marginBottom: "16px",display:"inline-block",backgroundColor:"#fff9e6",border: "1px solid #ffd966",borderRadius:"4px",padding:"4px" }}>
     Important: Third-Party AI Tool Usage
   </h3><br></br>
 
@@ -401,7 +401,7 @@ jurisdiction. Parties will attempt good-faith resolution before litigation.
 
 
             {/* Contact Information */}
-       <div style={{ marginBottom: "48px",backgroundColor:"#fff9e6",padding:"24px" }}>
+       <div style={{ marginBottom: "48px",backgroundColor:"#fff9e6",padding:"24px",border: "1px solid #ffd966",borderRadius: "4px", }}>
               <h2
                 style={{
                   fontSize: "24px",

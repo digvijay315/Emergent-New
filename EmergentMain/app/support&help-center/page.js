@@ -79,6 +79,7 @@ your automation journey, our Support Team is here to assist you every step of th
               padding: "64px",
               borderRadius: "4px",
               border: "1px solid #e5e5e5",
+              
             }}
             className="privacy-content"
           >
@@ -90,6 +91,7 @@ your automation journey, our Support Team is here to assist you every step of th
     backgroundColor: "#fff9e6", // ✅ light yellow background
     padding: "24px",
     borderRadius: "6px",
+    border: "1px solid #ffd966",
   }}
 >
   <h2
@@ -332,7 +334,7 @@ your automation journey, our Support Team is here to assist you every step of th
 </div>
 
             {/* Contact Information */}
- <div style={{ marginBottom: "48px",backgroundColor:"#fff9e6",padding: "24px"}}>
+ <div style={{ marginBottom: "48px",backgroundColor:"#fff9e6",padding: "24px",border: "1px solid #ffd966",borderRadius: "4px",}}>
   <h2
     style={{
       fontSize: "28px",

@@ -53,7 +53,7 @@ export const Footer = () => {
             >
               Powering Businesses Through AI Automation<br></br><br></br>
               20 Wenlock Road<br></br>
-              London,England<br></br>
+              London, England<br></br>
               N1 7GU
 
             </p>

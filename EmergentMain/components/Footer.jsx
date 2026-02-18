@@ -51,7 +51,11 @@ export const Footer = () => {
                 marginBottom: "24px",
               }}
             >
-              Powering Businesses Through AI Automation
+              Powering Businesses Through AI Automation<br></br>
+              20 Wenlock Road<br></br>
+              London,England<br></br>
+              N1 7GU
+
             </p>
             <div style={{ marginBottom: "16px" }}>
               <p

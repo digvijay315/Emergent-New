@@ -24,7 +24,7 @@ export const Footer = () => {
         >
           {/* Company Info */}
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "-10px" }}>
               <img
                 src="/image1.png"
                 alt="IntelliviaAI Logo"
@@ -51,7 +51,7 @@ export const Footer = () => {
                 marginBottom: "24px",
               }}
             >
-              Powering Businesses Through AI Automation<br></br>
+              Powering Businesses Through AI Automation<br></br><br></br>
               20 Wenlock Road<br></br>
               London,England<br></br>
               N1 7GU
